@@ -1,0 +1,37 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "animations.scss";
+
+$mobile: new-breakpoint(max-width 500px 6);
+
+// remove default margin
+body {
+    margin: 0;
+}
+
+#top-navbar {
+    text-align: center;
+    background-color: #eee;
+}
+
+#menu-bar {
+    li {
+        display: inline-block;
+    }
+}
+
+#work-container {
+    @include outer-container;
+    @include animation(scaleUp 0.5s ease-in-out 0 1);
+
+    .portfolio-item {
+        @include span-columns(6);
+        background-color: #77f;
+        @include omega(2n);
+
+        @include media($mobile) {
+            @include span-columns(12);
+            background-color: green;
+        }
+    }
+}
