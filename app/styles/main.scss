@@ -2,10 +2,10 @@
 @import "neat/neat";
 @import "animations.scss";
 
-$mobile: new-breakpoint(max-width 500px 6);
+$mobile: new-breakpoint(max-width 555px 6);
 
 // remove default margin
-body {
+body, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
@@ -22,16 +22,20 @@ body {
 
 #work-container {
     @include outer-container;
-    @include animation(scaleUp 0.5s ease-in-out 0 1);
+    @include animation(scaleUp 0.5s ease 0 1);
 
     .portfolio-item {
-        @include span-columns(6);
+        @include span-columns(4);
         background-color: #77f;
-        @include omega(2n);
+        @include omega(3n);
 
         @include media($mobile) {
             @include span-columns(12);
             background-color: green;
         }
     }
+}
+
+#portfolio-content-container {
+    display: none;
 }

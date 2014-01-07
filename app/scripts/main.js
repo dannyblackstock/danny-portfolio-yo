@@ -1,8 +1,17 @@
+'use strict';
 console.log('\'Allo \'Allo!');
 
-function loadContentFromHash() {
+function loadPortfolioItemContent(filename) {
+    $('#work-container').hide();
+    $('#portfolio-item-page-container').show(); // show the container
+
+    $('#portfolio-item-contents-container').load(filename, function() {
+        console.log(filename + ' was loaded');
+    });
+}
+
+function checkHashAndLoad() {
     // get hash
-    'use strict';
 
     var hash = window.location.hash.substring(1);
     console.log('hash is now: ' + hash);
@@ -10,31 +19,38 @@ function loadContentFromHash() {
     // check hash
     if (hash === '')
     {
-        $('#ajax-content-container').load('main_page_contents.html', function() {
-            console.log('main_page_contents.html was loaded');
-        });
+        $('#portfolio-item-page-container').hide();
+        $('#work-container').show();
     }
 
-    else if (hash === 'portfolio_item_contents.html')
-    {
-        $('#ajax-content-container').load('portfolio_item_contents.html', function() {
-            console.log('portfolio_item_contents.html was loaded');
-            window.location.hash = 'portfolio_item_contents.html';
-        });
+    // if not on the homepage, show the portfolio item contents container
+
+    else if (hash === 'wayfinding') {
+        loadPortfolioItemContent('wayfinding.html');
+    }
+
+    else if (hash === 'demo_reel') {
+        loadPortfolioItemContent('demo_reel.html');
     }
 }
 
 $(document).ready( function(){
-    'use strict';
 
-    loadContentFromHash();
+    checkHashAndLoad();
 
-    $('#logo').click( function() {
-        window.location.hash = 'portfolio_item_contents.html';
+    $('#wayfinding-button').click( function() {
+        window.location.hash = 'wayfinding';
+    });
+
+    $('#demo-reel-button').click( function() {
+        window.location.hash = 'demo_reel';
+    });
+
+    $('#close-portfolio-item').click( function() {
+        window.location.hash = '';
     });
 });
 
 $(window).on('hashchange', function() {
-    'use strict';
-    loadContentFromHash();
+    checkHashAndLoad();
 });
