@@ -3,7 +3,7 @@
 
 @include keyframes(scaleUp) {
   from {
-    @include transform(scale(0));
+    @include transform(scale(0.9));
     opacity: 0;
   }
   to {

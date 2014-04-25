@@ -1,17 +1,27 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
+@import "grid-settings";
+@import "mixins";
 @import "animations.scss";
 
-$mobile: new-breakpoint(max-width 555px 6);
+$mobile: new-breakpoint(min-width 450px 12);
+$tablet: new-breakpoint(min-width 750px 12);
 
 // remove default margin
 body, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+// nav bar
 #top-navbar {
+    @include outer-container;
     text-align: center;
     background-color: #eee;
+    cursor: default;
+
+    a {
+        cursor: pointer;
+    }
 }
 
 #menu-bar {
@@ -20,22 +30,42 @@ body, p, h1, h2, h3, h4, h5, h6 {
     }
 }
 
+// works
 #work-container {
     @include outer-container;
     @include animation(scaleUp 0.5s ease 0 1);
+    padding: 20px;
 
     .portfolio-item {
-        @include span-columns(4);
+        @include span-columns(12);
         background-color: #77f;
-        @include omega(3n);
+        margin-bottom: 2px;
+        cursor: pointer;
+        height: 200px;
+        margin-top: 10px;
 
         @include media($mobile) {
-            @include span-columns(12);
+            @include span-columns(6);
+            @include omega(2n);
             background-color: green;
+        }
+
+        @include media($tablet) {
+            @include omega-reset(2n);
+            @include span-columns(4);
+            @include omega(3n);
+            background-color: red;
+
         }
     }
 }
 
-#portfolio-content-container {
-    display: none;
+#portfolio-item-page-container {
+    padding: 20px;
+
+    #portfolio-item-contents-container {
+        p {
+            margin: 10px 0;
+        }
+    }
 }
