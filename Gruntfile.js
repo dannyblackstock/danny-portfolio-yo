@@ -67,7 +67,7 @@ module.exports = function (grunt) {
                 port: 9000,
                 livereload: 35729,
                 // Change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
@@ -173,10 +173,10 @@ module.exports = function (grunt) {
         },
 
         // Automatically inject Bower components into the HTML file
-        'bower-install': {
-            app: {
-                html: '<%= yeoman.app %>/index.html',
-                ignorePath: '<%= yeoman.app %>/'
+        bowerInstall: {
+            target: {
+                src: ['app/index.html'], // point to your HTML file.
+                // ignorePath: '<%= yeoman.app %>/'
             }
         },
 
