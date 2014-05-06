@@ -7,7 +7,7 @@
 $mobile: new-breakpoint(min-width 450px 12);
 $tablet: new-breakpoint(min-width 750px 12);
 
-// remove default margin
+// Remove default margins.
 body, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
@@ -16,21 +16,23 @@ body, p, h1, h2, h3, h4, h5, h6 {
 #top-navbar {
     @include outer-container;
     text-align: center;
-    background-color: #eee;
-    cursor: default;
+}
 
-    a {
-        cursor: pointer;
-    }
+#logo {
+    @include span-columns(12);
+    background-color: #eee;
 }
 
 #menu-bar {
-    li {
+    @include span-columns(12);
+    background-color: #eee;
+
+    .menu-bar-item {
         display: inline-block;
     }
 }
 
-// works
+// Home page (works).
 #work-container {
     @include outer-container;
     @include animation(scaleUp 0.5s ease 0 1);
@@ -38,15 +40,18 @@ body, p, h1, h2, h3, h4, h5, h6 {
 
     .portfolio-item {
         @include span-columns(12);
-        background-color: #77f;
-        margin-bottom: 2px;
-        cursor: pointer;
+        display: block;
+
         height: 200px;
-        margin-top: 10px;
+        margin: 10px 0 2px 0;
+
+        background-color: #77f;
+        cursor: pointer;
 
         @include media($mobile) {
             @include span-columns(6);
             @include omega(2n);
+
             background-color: green;
         }
 
@@ -54,18 +59,18 @@ body, p, h1, h2, h3, h4, h5, h6 {
             @include omega-reset(2n);
             @include span-columns(4);
             @include omega(3n);
-            background-color: red;
 
+            background-color: red;
         }
     }
 }
 
 #portfolio-item-page-container {
     padding: 20px;
+}
 
-    #portfolio-item-contents-container {
-        p {
-            margin: 10px 0;
-        }
+#portfolio-item-contents-container {
+    p {
+        margin: 10px 0;
     }
 }

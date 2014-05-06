@@ -67,7 +67,98 @@ module.exports = function (grunt) {
                 port: 9000,
                 livereload: 35729,
                 // Change this to '0.0.0.0' to access the server from outside
-                hostname: '0.0.0.0'
+                hostname: '0.0.0.0',
+                middleware: [
+                    function myMiddleware(req, res, next) {
+
+                        var http = require("http");
+                        var path = require("path");
+                        var fs = require("fs");
+                        var mime = require('mime');
+
+                        var now = new Date();
+
+                        var filename = req.url || "index.html";
+                        var ext = path.extname(filename);
+                        var localPath = __dirname;
+
+                        var validExtensions = {
+                            ".html" : "text/html",
+                            ".js": "application/javascript",
+                            ".css": "text/css",
+                            ".txt": "text/plain",
+                            ".jpg": "image/jpeg",
+                            ".gif": "image/gif",
+                            ".png": "image/png"
+                        };
+                        var isValidExt = validExtensions[ext];
+
+                        var validNonHMTLExtensions = {
+                            ".js": "application/javascript",
+                            ".css": "text/css",
+                            ".txt": "text/plain",
+                            ".jpg": "image/jpeg",
+                            ".gif": "image/gif",
+                            ".png": "image/png"
+                        };
+                        var isNotDirectoryOrHTML = validNonHMTLExtensions[ext];
+
+                        if (isNotDirectoryOrHTML) {
+
+                            localPath += "/app" + filename;
+                            localPath = localPath;
+
+                            path.exists(localPath, function(exists) {
+                                if(exists) {
+                                    console.log("Serving file: " + localPath);
+                                    getFile(localPath, res, ext);
+                                } else {
+                                    console.log("File not found: " + localPath);
+                                    res.writeHead(404);
+                                    res.end();
+                                }
+                            });
+                        }
+                        else {
+                            console.log("Invalid file extension detected: " + ext)
+                            console.log('serving ./app/index.html');
+                            getFile('./app/index.html', res, 'html');
+                        }
+
+                        // if (isValidExt) {
+
+                        //     localPath += filename;
+                        //     path.exists(localPath, function(exists) {
+                        //         if(exists) {
+                        //             console.log("Serving file: " + localPath);
+                        //             getFile(localPath, res, ext);
+                        //         } else {
+                        //             console.log("File not found: " + localPath);
+                        //             res.writeHead(404);
+                        //             res.end();
+                        //         }
+                        //     });
+
+                        // } else {
+                        //     console.log("Invalid file extension detected: " + ext)
+                        //     getFile('index.html', res, 'html');
+                        // }
+
+                        function getFile(localPath, res, mimeType) {
+                            fs.readFile(localPath, function(err, contents) {
+                                if(!err) {
+                                    res.setHeader("Content-Length", contents.length);
+                                    res.setHeader("Content-Type", mime.lookup(mimeType));
+                                    res.statusCode = 200;
+                                    res.end(contents);
+                                } else {
+                                    res.writeHead(500);
+                                    res.end();
+                                }
+                            });
+                        }
+                    }
+                ],
             },
             livereload: {
                 options: {
@@ -145,7 +236,7 @@ module.exports = function (grunt) {
                     expand: true,
                     cwd: '<%= yeoman.app %>/styles',
                     src: ['*.scss'],
-                    dest: '.tmp/styles',
+                    dest: '<%= yeoman.app %>/styles',
                     ext: '.css'
                 }]
             },
