@@ -26,11 +26,15 @@ function checkHashAndLoad() {
     // if not on the homepage, show the portfolio item contents container
 
     else if (hash === 'wayfinding') {
-        loadPortfolioItemContent('wayfinding.html');
+        loadPortfolioItemContent('portfolio_item_contents/wayfinding.html');
     }
 
     else if (hash === 'demo_reel') {
-        loadPortfolioItemContent('demo_reel.html');
+        loadPortfolioItemContent('portfolio_item_contents/demo_reel.html');
+    }
+
+    else if (hash === 'sense_tecnic') {
+        loadPortfolioItemContent('portfolio_item_contents/sense_tecnic.html');
     }
 }
 
@@ -44,6 +48,10 @@ $(document).ready( function(){
 
     $('#demo-reel-button').click( function() {
         window.location.hash = 'demo_reel';
+    });
+
+    $('#sense-tecnic-button').click( function() {
+        window.location.hash = 'sense_tecnic';
     });
 
     $('#close-portfolio-item').click( function() {

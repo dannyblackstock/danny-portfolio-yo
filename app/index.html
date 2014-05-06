@@ -21,42 +21,41 @@
 
     </head>
     <body>
-        <!--[if lt IE 10]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div id="top-navbar">
-            <div id="logo"><h1>Danny Blackstock</h1></div>
-            <div id="menu-bar">
-                <li><a>Work</a></li>
-                <span class="bullet"> • </span>
-                <li><a>About</a></li>
-                <span class="bullet"> • </span>
-                <li><a>Contact</a></li>
-                <span class="bullet"> • </span>
-                <li><a>Resume</a></li>
+        <div id="container">
+            <!--[if lt IE 10]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+            <div id="top-navbar">
+                <div id="logo"><h1>Danny Blackstock</h1></div>
+                <div id="menu-bar">
+                    <li class="menu-bar-item"><a>Work</a></li>
+                    <li class="menu-bar-item"><a>About</a></li>
+                    <li class="menu-bar-item"><a>Contact</a></li>
+                    <li class="menu-bar-item"><a>Resume</a></li>
+                </div>
+            </div>
+
+            <div id="work-container">
+                <a class="portfolio-item" id="atb-store-link">Active Textbook Store</a>
+                <a class="portfolio-item" id="atb-apps-link">Active Textbook Apps</a>
+                <a class="portfolio-item" id="atb-client-link">Active Textbook Client</a>
+                <a class="portfolio-item" id="awake-link">Awake</a>
+                <a class="portfolio-item" id="weather-link">Weather Network Redesign</a>
+                <a class="portfolio-item" id="sense-tecnic-link" href="sense_tecnic">Sense Tecnic</a>
+                <a class="portfolio-item" id="wayfinding-link" href="wayfinding">Wayfinding Application</a>
+                <a class="portfolio-item" id="demo-reel-link" href="demo_reel">Demo Reel</a>
+            </div>
+
+            <div id="portfolio-item-page-container">
+                <button id="close-portfolio-item">Close</button>
+                <div id="portfolio-item-contents-container"></div>
             </div>
         </div>
-
-        <div id="work-container">
-            <div class="portfolio-item" id="atb-store-button">Active Textbook Store</div>
-            <div class="portfolio-item" id="atb-apps-button">Active Textbook Apps</div>
-            <div class="portfolio-item" id="atb-client-button">Active Textbook Client</div>
-            <div class="portfolio-item" id="awake-button">Awake</div>
-            <div class="portfolio-item" id="weather-button">Weather Network Redesign</div>
-            <div class="portfolio-item" id="sense-tecnic-button">Sense Tecnic</div>
-            <div class="portfolio-item" id="wayfinding-button">Wayfinding Application</div>
-            <div class="portfolio-item" id="demo-reel-button">Demo Reel</div>
-        </div>
-
-        <div id="portfolio-item-page-container">
-            <button id="close-portfolio-item">Close</button>
-            <div id="portfolio-item-contents-container"></div>
-        </div>
-
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/history.js/scripts/uncompressed/history.js"></script>
+        <script src="bower_components/html5-history-api/history.js"></script>
+        <script src="bower_components/jquery-address/src/jquery.address.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -73,5 +72,5 @@
         <!-- build:js scripts/main.js -->
         <script src="scripts/main_history_js.js"></script>
         <!-- endbuild -->
-</body>
+    </body>
 </html>
