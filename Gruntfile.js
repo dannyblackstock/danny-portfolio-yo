@@ -82,16 +82,10 @@ module.exports = function (grunt) {
                         var ext = path.extname(filename);
                         var localPath = __dirname;
 
-                        var validExtensions = {
+                        var isHTML = {
                             ".html" : "text/html",
-                            ".js": "application/javascript",
-                            ".css": "text/css",
-                            ".txt": "text/plain",
-                            ".jpg": "image/jpeg",
-                            ".gif": "image/gif",
-                            ".png": "image/png"
                         };
-                        var isValidExt = validExtensions[ext];
+                        var isHTML = isHTML[ext];
 
                         var validNonHMTLExtensions = {
                             ".js": "application/javascript",
@@ -105,7 +99,13 @@ module.exports = function (grunt) {
 
                         if (isNotDirectoryOrHTML) {
 
-                            localPath += "/app" + filename;
+                            if( filename.indexOf("/app") >= 0){
+                              localPath += filename;
+                            }
+                            else {
+                                localPath += "/app" + filename;
+                            }
+
                             localPath = localPath;
 
                             path.exists(localPath, function(exists) {
@@ -119,30 +119,28 @@ module.exports = function (grunt) {
                                 }
                             });
                         }
+
+                        else if (isHTML) {
+
+                            localPath += filename;
+
+                            path.exists(localPath, function(exists) {
+                                if(exists) {
+                                    console.log("Serving file: " + localPath);
+                                    getFile(localPath, res, ext);
+                                } else {
+                                    console.log("File not found: " + localPath);
+                                    res.writeHead(404);
+                                    res.end();
+                                }
+                            });
+                        }
+
                         else {
                             console.log("Invalid file extension detected: " + ext)
                             console.log('serving ./app/index.html');
                             getFile('./app/index.html', res, 'html');
                         }
-
-                        // if (isValidExt) {
-
-                        //     localPath += filename;
-                        //     path.exists(localPath, function(exists) {
-                        //         if(exists) {
-                        //             console.log("Serving file: " + localPath);
-                        //             getFile(localPath, res, ext);
-                        //         } else {
-                        //             console.log("File not found: " + localPath);
-                        //             res.writeHead(404);
-                        //             res.end();
-                        //         }
-                        //     });
-
-                        // } else {
-                        //     console.log("Invalid file extension detected: " + ext)
-                        //     getFile('index.html', res, 'html');
-                        // }
 
                         function getFile(localPath, res, mimeType) {
                             fs.readFile(localPath, function(err, contents) {
