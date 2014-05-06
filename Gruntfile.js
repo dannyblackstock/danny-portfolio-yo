@@ -69,51 +69,64 @@ module.exports = function (grunt) {
                 // Change this to '0.0.0.0' to access the server from outside
                 hostname: '0.0.0.0',
                 middleware: [
-                    function myMiddleware(req, res, next) {
+                    function myMiddleware(req, res) {
 
-                        var http = require("http");
-                        var path = require("path");
-                        var fs = require("fs");
+                        function getFile(localPath, res, mimeType) {
+                            fs.readFile(localPath, function(err, contents) {
+                                if(!err) {
+                                    res.setHeader('Content-Length', contents.length);
+                                    res.setHeader('Content-Type', mime.lookup(mimeType));
+                                    res.statusCode = 200;
+                                    res.end(contents);
+                                } else {
+                                    res.writeHead(500);
+                                    res.end();
+                                }
+                            });
+                        }
+
+                        // var http = require('http');
+                        var path = require('path');
+                        var fs = require('fs');
                         var mime = require('mime');
 
-                        var now = new Date();
+                        // var now = new Date();
 
-                        var filename = req.url || "index.html";
+                        var filename = req.url || 'index.html';
                         var ext = path.extname(filename);
                         var localPath = __dirname;
 
-                        var isHTML = {
-                            ".html" : "text/html",
+                        var validHTMLExtensions = {
+                            '.html' : 'text/html',
                         };
-                        var isHTML = isHTML[ext];
+                        var isHTML = validHTMLExtensions[ext];
 
                         var validNonHMTLExtensions = {
-                            ".js": "application/javascript",
-                            ".css": "text/css",
-                            ".txt": "text/plain",
-                            ".jpg": "image/jpeg",
-                            ".gif": "image/gif",
-                            ".png": "image/png"
+                            '.js': 'application/javascript',
+                            '.css': 'text/css',
+                            '.txt': 'text/plain',
+                            '.jpg': 'image/jpeg',
+                            '.gif': 'image/gif',
+                            '.png': 'image/png',
+                            '.ico': 'image/x-icon'
                         };
                         var isNotDirectoryOrHTML = validNonHMTLExtensions[ext];
 
                         if (isNotDirectoryOrHTML) {
 
-                            if( filename.indexOf("/app") >= 0){
-                              localPath += filename;
+                            if( filename.indexOf('/app') >= 0){
+                                localPath += filename;
                             }
                             else {
-                                localPath += "/app" + filename;
+                                localPath += '/app' + filename;
                             }
-
-                            localPath = localPath;
 
                             path.exists(localPath, function(exists) {
                                 if(exists) {
-                                    console.log("Serving file: " + localPath);
+                                    console.log('Serving file: ' + localPath);
                                     getFile(localPath, res, ext);
                                 } else {
-                                    console.log("File not found: " + localPath);
+                                    console.log('File not found: ' + localPath);
                                     res.writeHead(404);
                                     res.end();
                                 }
@@ -122,14 +135,19 @@ module.exports = function (grunt) {
 
                         else if (isHTML) {
 
-                            localPath += filename;
+                            if( filename.indexOf('/app') >= 0){
+                                localPath += filename;
+                            }
+                            else {
+                                localPath += '/app' + filename;
+                            }
 
                             path.exists(localPath, function(exists) {
                                 if(exists) {
-                                    console.log("Serving file: " + localPath);
+                                    console.log('HTML requested. Serving file: ' + localPath);
                                     getFile(localPath, res, ext);
                                 } else {
-                                    console.log("File not found: " + localPath);
+                                    console.log('File not found: ' + localPath);
                                     res.writeHead(404);
                                     res.end();
                                 }
@@ -137,23 +155,9 @@ module.exports = function (grunt) {
                         }
 
                         else {
-                            console.log("Invalid file extension detected: " + ext)
-                            console.log('serving ./app/index.html');
+                            console.log('Invalid file extension detected: ' + ext);
+                            console.log('Other request. Serving ./app/index.html');
                             getFile('./app/index.html', res, 'html');
-                        }
-
-                        function getFile(localPath, res, mimeType) {
-                            fs.readFile(localPath, function(err, contents) {
-                                if(!err) {
-                                    res.setHeader("Content-Length", contents.length);
-                                    res.setHeader("Content-Type", mime.lookup(mimeType));
-                                    res.statusCode = 200;
-                                    res.end(contents);
-                                } else {
-                                    res.writeHead(500);
-                                    res.end();
-                                }
-                            });
                         }
                     }
                 ],
