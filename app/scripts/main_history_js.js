@@ -1,30 +1,42 @@
 'use strict';
 
+var $portfolioContent = $('#contents-container');
 
-var loadPortfolioContent = function(href) {
-    var htmlRequest = 'portfolio_item_contents/' + href + '.html';
-    $('#portfolio-item-contents-container').show().load(htmlRequest);
+var loadContent = function(href) {
+    var htmlRequest;
+
+    if (href && href !== '' && href !== ' ' && href !== '/'){
+        htmlRequest = 'container_contents/' + href + '.html';
+    }
+    else {
+        htmlRequest = 'container_contents/work.html';
+    }
+
+    $portfolioContent.load(htmlRequest, function(responseText, textStatus) {
+        if (textStatus === 'error') {
+            $portfolioContent.load('error.html');
+            history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
+            document.title = history.state.title;
+        }
+    });
     console.log(htmlRequest);
 };
 
-var hidePortfolioContent = function () {
-    $('#portfolio-item-contents-container').hide();
-};
-
-// on script load, if the url is not empty, load the requested page
-if (document.location.pathname.substring(1)) {
-    loadPortfolioContent(document.location.pathname.substring(1));
+console.log('document.location.pathname.substring(1): ' + document.location.pathname.substring(1));
+if (document.location.pathname.substring(1) !== '' && document.location.pathname.substring(1) !== '/') {
+    // load the requested page
+    loadContent(document.location.pathname.substring(1));
+}
+else {
+    loadContent('work');
 }
 
 // when the user clicks a link
 $('a, area').click( function(e) {
-    //
     e.preventDefault();
     var href = $(this).attr('href');
-
-    history.pushState({data:'data is here!'}, '', href);
-    loadPortfolioContent(href);
-
+    loadContent(href);
+    history.pushState({}, '', href);
     console.log('href: ' + href);
 });
 
@@ -34,10 +46,10 @@ $(window).on('popstate', function(e) {
             var returnLocation = history.location || document.location;
             // alert('We returned to the page with a link: ' + returnLocation.href);
             console.log(returnLocation.pathname.substring(1));
-            loadPortfolioContent(returnLocation.pathname.substring(1));
+            loadContent(returnLocation.pathname.substring(1));
         }
         else {
-            hidePortfolioContent();
+            loadContent('work');
         }
     }
 });
