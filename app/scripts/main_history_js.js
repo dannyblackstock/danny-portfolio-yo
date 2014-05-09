@@ -45,7 +45,9 @@ $('a, area').click( function(e) {
 
 $(window).on('popstate', function(e) {
     // for chrome that calls popstate on initial load, check if my tag is present
-    if (!e.originalEvent.state.myTag) return; // if it's not, skip
+    if (e.originalEvent && !e.originalEvent.state.myTag) {
+        return; // if it's not, skip
+    }
     var returnLocation = history.location || document.location;
     // alert('We returned to the page with a link: ' + returnLocation.href);
     console.log(returnLocation.pathname.substring(1));
