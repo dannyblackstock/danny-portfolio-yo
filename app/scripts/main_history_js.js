@@ -30,6 +30,7 @@ if (document.location.pathname.substring(1) !== '' && document.location.pathname
 else {
     loadContent('work');
 }
+
 // call replaceState at page load so that we can handle the popstate when we get back to the initial page load
 // for chrome that calls popstate on initial load
 history.replaceState({myTag: true});
@@ -45,7 +46,7 @@ $('a, area').click( function(e) {
 
 $(window).on('popstate', function(e) {
     // for chrome that calls popstate on initial load, check if my tag is present
-    if (e.originalEvent && !e.originalEvent.state.myTag) {
+    if (!e.originalEvent || !e.originalEvent.state.myTag) {
         return; // if it's not, skip
     }
     var returnLocation = history.location || document.location;
