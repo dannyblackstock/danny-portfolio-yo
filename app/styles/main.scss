@@ -4,8 +4,8 @@
 @import "mixins";
 @import "animations.scss";
 
-$mobile: new-breakpoint(min-width 450px 12);
-$tablet: new-breakpoint(min-width 750px 12);
+$mobile: new-breakpoint(min-width 500px 12);
+$tablet: new-breakpoint(min-width 650px 12);
 
 // Remove default margins.
 body, p, h1, h2, h3, h4, h5, h6 {
@@ -36,29 +36,41 @@ body, p, h1, h2, h3, h4, h5, h6 {
 #work-container {
     @include outer-container;
     @include animation(scaleUp 0.5s ease 0 1);
-    padding: 20px;
+    padding: 10px;
+    text-align: center;
 
     .portfolio-item {
-        @include span-columns(12);
-        display: block;
+        //@include span-columns(12);
+        display: inline-block;
 
-        height: 200px;
-        margin: 10px 0 2px 0;
+        height: 300px;
+        width: 300px;
+        margin: 5px 2px;
 
         background-color: #77f;
         cursor: pointer;
 
-        @include media($mobile) {
-            @include span-columns(6);
-            @include omega(2n);
+        opacity: 0.82;
+        @include transition(opacity 0.25s ease);
 
+        &:hover {
+            opacity: 1;
+        }
+
+        @include media($mobile) {
+            // @include span-columns(6);
+            // @include omega(2n);
+            height: 225px;
+            width: 225px;
             background-color: green;
         }
 
         @include media($tablet) {
-            @include omega-reset(2n);
-            @include span-columns(4);
-            @include omega(3n);
+            // @include omega-reset(2n);
+            // @include span-columns(4);
+            // @include omega(3n);
+            height: 275px;
+            width: 275px;
 
             background-color: red;
         }

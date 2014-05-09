@@ -14,7 +14,7 @@ var loadContent = function(href) {
 
     $portfolioContent.load(htmlRequest, function(responseText, textStatus) {
         if (textStatus === 'error') {
-            $portfolioContent.load('error.html');
+            $portfolioContent.load('404.html');
             // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
             // document.title = history.state.title;
         }
