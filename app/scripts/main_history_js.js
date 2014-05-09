@@ -15,8 +15,8 @@ var loadContent = function(href) {
     $portfolioContent.load(htmlRequest, function(responseText, textStatus) {
         if (textStatus === 'error') {
             $portfolioContent.load('error.html');
-            history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
-            document.title = history.state.title;
+            // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
+            // document.title = history.state.title;
         }
     });
     console.log(htmlRequest);
@@ -30,26 +30,24 @@ if (document.location.pathname.substring(1) !== '' && document.location.pathname
 else {
     loadContent('work');
 }
+// call replaceState at page load so that we can handle the popstate when we get back to the initial page load
+// for chrome that calls popstate on initial load
+history.replaceState({myTag: true});
 
 // when the user clicks a link
 $('a, area').click( function(e) {
     e.preventDefault();
     var href = $(this).attr('href');
     loadContent(href);
-    history.pushState({}, '', href);
+    history.pushState({myTag: true}, '', href);
     console.log('href: ' + href);
 });
 
 $(window).on('popstate', function(e) {
-    if (e.originalEvent) {
-        if (e.originalEvent.state !== 'undefined' && e.originalEvent.state !== null) {
-            var returnLocation = history.location || document.location;
-            // alert('We returned to the page with a link: ' + returnLocation.href);
-            console.log(returnLocation.pathname.substring(1));
-            loadContent(returnLocation.pathname.substring(1));
-        }
-        else {
-            loadContent('work');
-        }
-    }
+    // for chrome that calls popstate on initial load, check if my tag is present
+    if (!e.originalEvent.state.myTag) return; // if it's not, skip
+    var returnLocation = history.location || document.location;
+    // alert('We returned to the page with a link: ' + returnLocation.href);
+    console.log(returnLocation.pathname.substring(1));
+    loadContent(returnLocation.pathname.substring(1));
 });
