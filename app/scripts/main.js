@@ -41,13 +41,17 @@ else {
 history.replaceState({myTag: true});
 
 // when the user clicks a link
-$('a, area').click( function(e) {
+$(document).on('click', 'a, area', function(e) {
     // prevent the normal link click behaviour from happening
     e.preventDefault();
+    console.log('clicked!');
 
     // load the content based on the href attribute of the link
     var href = $(this).attr('href');
-    loadContent(href);
+
+    $('#contents-container').animo({animation: 'tada', duration: 0.5}, function() {
+        loadContent(href);
+    });
 
     // add to the history and add some data ('myTag') to ignore the initial load popstate
     history.pushState({myTag: true}, '', href);

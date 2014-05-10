@@ -5,6 +5,7 @@
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
     "html5-history-api": "~4.1.0",
+    "animo.js": "*"
   },
   "devDependencies": {
     "jquery": "~1.10.2"
