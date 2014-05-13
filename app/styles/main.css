@@ -8,9 +8,14 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.animated.scaleUp {
+  -webkit-animation-name: scaleUp;
+  -moz-animation-name: scaleUp;
+  animation-name: scaleUp; }
+
 @-webkit-keyframes scaleUp {
   from {
-    -webkit-transform: scale(0.9);
+    -webkit-transform: scale(0.95);
     opacity: 0; }
 
   to {
@@ -19,7 +24,7 @@
 
 @-moz-keyframes scaleUp {
   from {
-    -moz-transform: scale(0.9);
+    -moz-transform: scale(0.95);
     opacity: 0; }
 
   to {
@@ -28,7 +33,7 @@
 
 @-o-keyframes scaleUp {
   from {
-    -o-transform: scale(0.9);
+    -o-transform: scale(0.95);
     opacity: 0; }
 
   to {
@@ -37,12 +42,53 @@
 
 @keyframes scaleUp {
   from {
-    transform: scale(0.9);
+    transform: scale(0.95);
     opacity: 0; }
 
   to {
     transform: scale(1);
     opacity: 1; } }
+
+.animated.scaleUpBig {
+  -webkit-animation-name: scaleUpBig;
+  -moz-animation-name: scaleUpBig;
+  animation-name: scaleUpBig; }
+
+@-webkit-keyframes scaleUpBig {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -webkit-transform: scale(1.1);
+    opacity: 0; } }
+
+@-moz-keyframes scaleUpBig {
+  from {
+    -moz-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -moz-transform: scale(1.1);
+    opacity: 0; } }
+
+@-o-keyframes scaleUpBig {
+  from {
+    -o-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -o-transform: scale(1.1);
+    opacity: 0; } }
+
+@keyframes scaleUpBig {
+  from {
+    transform: scale(1);
+    opacity: 1; }
+
+  to {
+    transform: scale(1.1);
+    opacity: 0; } }
 
 body, p, h1, h2, h3, h4, h5, h6 {
   margin: 0; }
@@ -84,10 +130,6 @@ body, p, h1, h2, h3, h4, h5, h6 {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  -webkit-animation: scaleUp 0.5s ease 0 1;
-  -moz-animation: scaleUp 0.5s ease 0 1;
-  animation: scaleUp 0.5s ease 0 1;
-  padding: 10px;
   text-align: center; }
   #work-container:before, #work-container:after {
     content: " ";
@@ -96,26 +138,39 @@ body, p, h1, h2, h3, h4, h5, h6 {
     clear: both; }
   #work-container .portfolio-item {
     display: inline-block;
-    height: 300px;
-    width: 300px;
-    margin: 5px 2px;
+    height: 265px;
+    width: 265px;
+    position: relative;
+    margin: 2px;
     background-color: #77f;
     cursor: pointer;
     opacity: 0.82;
-    -webkit-transition: opacity 0.25s ease;
-    -moz-transition: opacity 0.25s ease;
-    transition: opacity 0.25s ease; }
+    -webkit-transition: opacity 0.3s ease;
+    -moz-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    transition-timing-function: ease; }
     #work-container .portfolio-item:hover {
       opacity: 1; }
+    #work-container .portfolio-item:active {
+      -webkit-transform: scale(0.98);
+      -moz-transform: scale(0.98);
+      -ms-transform: scale(0.98);
+      -o-transform: scale(0.98);
+      transform: scale(0.98);
+      border: 0px; }
     @media screen and (min-width: 500px) {
       #work-container .portfolio-item {
-        height: 225px;
-        width: 225px;
         background-color: green; } }
     @media screen and (min-width: 650px) {
       #work-container .portfolio-item {
-        height: 275px;
-        width: 275px;
         background-color: red; } }
 
 #portfolio-item-page-container {

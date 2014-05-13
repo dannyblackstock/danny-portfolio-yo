@@ -3,9 +3,14 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
+.animated.scaleUp {
+  -webkit-animation-name: scaleUp;
+  -moz-animation-name: scaleUp;
+  animation-name: scaleUp; }
+
 @-webkit-keyframes scaleUp {
   from {
-    -webkit-transform: scale(0.9);
+    -webkit-transform: scale(0.95);
     opacity: 0; }
 
   to {
@@ -14,7 +19,7 @@
 
 @-moz-keyframes scaleUp {
   from {
-    -moz-transform: scale(0.9);
+    -moz-transform: scale(0.95);
     opacity: 0; }
 
   to {
@@ -23,7 +28,7 @@
 
 @-o-keyframes scaleUp {
   from {
-    -o-transform: scale(0.9);
+    -o-transform: scale(0.95);
     opacity: 0; }
 
   to {
@@ -32,9 +37,50 @@
 
 @keyframes scaleUp {
   from {
-    transform: scale(0.9);
+    transform: scale(0.95);
     opacity: 0; }
 
   to {
     transform: scale(1);
     opacity: 1; } }
+
+.animated.scaleUpBig {
+  -webkit-animation-name: scaleUpBig;
+  -moz-animation-name: scaleUpBig;
+  animation-name: scaleUpBig; }
+
+@-webkit-keyframes scaleUpBig {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -webkit-transform: scale(1.1);
+    opacity: 0; } }
+
+@-moz-keyframes scaleUpBig {
+  from {
+    -moz-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -moz-transform: scale(1.1);
+    opacity: 0; } }
+
+@-o-keyframes scaleUpBig {
+  from {
+    -o-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -o-transform: scale(1.1);
+    opacity: 0; } }
+
+@keyframes scaleUpBig {
+  from {
+    transform: scale(1);
+    opacity: 1; }
+
+  to {
+    transform: scale(1.1);
+    opacity: 0; } }

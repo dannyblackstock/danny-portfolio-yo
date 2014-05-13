@@ -35,33 +35,50 @@ body, p, h1, h2, h3, h4, h5, h6 {
 // Home page (works).
 #work-container {
     @include outer-container;
-    @include animation(scaleUp 0.5s ease 0 1);
-    padding: 10px;
+    // @include animation(scaleUp .5s ease 0 1);
+    // padding: 10px;
     text-align: center;
 
     .portfolio-item {
         //@include span-columns(12);
         display: inline-block;
+        height: 265px;
+        width: 265px;
 
-        height: 300px;
-        width: 300px;
-        margin: 5px 2px;
+        // width: 50%;
+        position: relative;
+        margin: 2px;
 
         background-color: #77f;
         cursor: pointer;
 
         opacity: 0.82;
-        @include transition(opacity 0.25s ease);
+        @include transition(opacity 0.3s ease);
+
+        @include transition-property (transform, opacity);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease);
 
         &:hover {
             opacity: 1;
         }
 
+        &:active {
+            @include transform(scale(0.98));
+            border: 0px;
+        }
+
+        // &:before {
+        //     content: '';
+        //     display: block;
+        //     padding-top: 90%;
+        // }
+
         @include media($mobile) {
             // @include span-columns(6);
             // @include omega(2n);
-            height: 225px;
-            width: 225px;
+            // height: 225px;
+            // width: 33.3333%;
             background-color: green;
         }
 
@@ -69,8 +86,8 @@ body, p, h1, h2, h3, h4, h5, h6 {
             // @include omega-reset(2n);
             // @include span-columns(4);
             // @include omega(3n);
-            height: 275px;
-            width: 275px;
+            // height: 270px;
+            // width: 270px;
 
             background-color: red;
         }

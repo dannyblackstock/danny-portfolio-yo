@@ -4,6 +4,9 @@ var loadContent = function(href) {
     var htmlRequest;
     var $portfolioContent = $('#contents-container');
 
+    // fade out content
+    $portfolioContent.animo({animation: 'fadeOut', duration: 0.5, keep: true, timing: 'ease-in-out'});
+
     // if the url being looked for isn't empty
     if (href && href !== '' && href !== ' ' && href !== '/'){
         // automatically look in the container_contents folder
@@ -21,6 +24,9 @@ var loadContent = function(href) {
             // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
             // document.title = history.state.title;
         }
+
+        // fade in loaded content
+        $('#contents-container').animo({animation: 'scaleUp', duration: 0.5, timing: 'ease-in-out'});
     });
     console.log(htmlRequest);
 };
@@ -44,12 +50,11 @@ history.replaceState({myTag: true});
 $(document).on('click', 'a, area', function(e) {
     // prevent the normal link click behaviour from happening
     e.preventDefault();
-    console.log('clicked!');
 
     // load the content based on the href attribute of the link
     var href = $(this).attr('href');
 
-    $('#contents-container').animo({animation: 'tada', duration: 0.5}, function() {
+    $('#contents-container').animo({animation: 'fadeOut', duration: 0.3, keep: true, timing: 'ease-in-out'}, function() {
         loadContent(href);
     });
 
