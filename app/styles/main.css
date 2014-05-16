@@ -472,6 +472,9 @@ a {
   a:hover {
     color: #003dbd; }
 
+#container {
+  overflow: hidden; }
+
 #top-navbar {
   position: fixed;
   top: 0;
@@ -570,9 +573,9 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    -webkit-transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out; }
+    -webkit-transition: opacity 0.25s ease-in-out;
+    -moz-transition: opacity 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out; }
 
 #footer {
   font-size: 18px;

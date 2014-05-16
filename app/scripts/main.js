@@ -19,7 +19,7 @@ var loadContent = function(href) {
     else {
         htmlRequest = 'container_contents/work.html';
         animationOutStyle = 'scaleDownOut';
-        animationInStyle = 'scaleUpIn';
+        animationInStyle = 'scaleDownIn';
     }
 
     $('#contents-container').animo({animation: animationOutStyle, duration: 0.4, keep: true, timing: 'ease-in-out'}, function() {

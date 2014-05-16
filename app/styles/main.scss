@@ -59,6 +59,11 @@ a {
     }
 }
 
+#container {
+    // to prevent scrollbars from showing during scale down page transitions
+    overflow: hidden;
+}
+
 // nav bar
 #top-navbar {
     // @include outer-container;
@@ -165,7 +170,7 @@ a {
         left: 0;
         width: 100%;
         height: 100%;
-        @include transition(opacity 0.5s ease-in-out)
+        @include transition(opacity 0.25s ease-in-out)
     }
 }
 
