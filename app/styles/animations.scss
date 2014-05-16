@@ -2,11 +2,11 @@
 @import "neat/neat";
 
 // for use by animo.js
-.animated.scaleUp {
-  @include animation-name(scaleUp);
+.animated.scaleUpIn {
+  @include animation-name(scaleUpIn);
 }
 
-@include keyframes(scaleUp) {
+@include keyframes(scaleUpIn) {
   from {
     @include transform(scale(0.95));
     opacity: 0;
@@ -17,17 +17,47 @@
   }
 }
 
-.animated.scaleUpBig {
-  @include animation-name(scaleUpBig);
+.animated.scaleUpOut {
+  @include animation-name(scaleUpOut);
 }
 
-@include keyframes(scaleUpBig) {
+@include keyframes(scaleUpOut) {
   from {
     @include transform(scale(1));
     opacity: 1;
   }
   to {
     @include transform(scale(1.1));
+    opacity: 0;
+  }
+}
+
+.animated.scaleDownIn {
+  @include animation-name(scaleDownIn);
+}
+
+@include keyframes(scaleDownIn) {
+  from {
+    @include transform(scale(1.1));
+    opacity: 0;
+  }
+  to {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+}
+
+.animated.scaleDownOut {
+  @include animation-name(scaleDownOut);
+}
+
+@include keyframes(scaleDownOut) {
+  from {
+    @include transform(scale(1));
+    opacity: 1;
+  }
+  to {
+    @include transform(scale(0.98));
     opacity: 0;
   }
 }

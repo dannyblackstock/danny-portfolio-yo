@@ -1,34 +1,43 @@
 'use strict';
 
 var loadContent = function(href) {
-    var htmlRequest;
+    var htmlRequest, animationStyle;
+    var animationDuration = 0.4;
     var $portfolioContent = $('#contents-container');
 
-    // fade out content
-    $portfolioContent.animo({animation: 'fadeOut', duration: 0.5, keep: true, timing: 'ease-in-out'});
+    $('body,html').animate({
+        scrollTop: 0
+    }, 300);
 
-    // if the url being looked for isn't empty
-    if (href && href !== '' && href !== ' ' && href !== '/'){
-        // automatically look in the container_contents folder
-        htmlRequest = 'container_contents/' + href + '.html';
-    }
-    // otherwise, just load the homepage
-    else {
-        htmlRequest = 'container_contents/work.html';
-    }
+    $('#contents-container').animo({animation: 'scaleDownOut', duration: 0.4, keep: true, timing: 'ease-in-out'}, function() {
 
-    $portfolioContent.load(htmlRequest, function(responseText, textStatus) {
-        if (textStatus === 'error') {
-            // show the 404 page if the page could not be found
-            $portfolioContent.load('404.html');
-            // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
-            // document.title = history.state.title;
+        // if the url being looked for isn't empty
+        if (href && href !== '' && href !== ' ' && href !== '/'){
+            // automatically look in the container_contents folder
+            htmlRequest = 'container_contents/' + href + '.html';
+            animationStyle = 'fadeIn';
+        }
+        // otherwise, just load the homepage
+        else {
+            htmlRequest = 'container_contents/work.html';
+            animationStyle = 'scaleUpIn';
         }
 
-        // fade in loaded content
-        $('#contents-container').animo({animation: 'scaleUp', duration: 0.5, timing: 'ease-in-out'});
+        $portfolioContent.load(htmlRequest, function(responseText, textStatus) {
+            if (textStatus === 'error') {
+                // show the 404 page if the page could not be found
+                $portfolioContent.load('404.html');
+                animationStyle = 'rotateIn';
+                animationDuration = 0.8;
+                // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
+                // document.title = history.state.title;
+            }
+
+            // fade in loaded content
+            $('#contents-container').animo({animation: animationStyle, duration: animationDuration, timing: 'ease-in-out'});
+        });
+        console.log(htmlRequest);
     });
-    console.log(htmlRequest);
 };
 
 console.log('document.location.pathname.substring(1): ' + document.location.pathname.substring(1));
@@ -54,9 +63,7 @@ $(document).on('click', 'a, area', function(e) {
     // load the content based on the href attribute of the link
     var href = $(this).attr('href');
 
-    $('#contents-container').animo({animation: 'fadeOut', duration: 0.3, keep: true, timing: 'ease-in-out'}, function() {
-        loadContent(href);
-    });
+    loadContent(href);
 
     // add to the history and add some data ('myTag') to ignore the initial load popstate
     history.pushState({myTag: true}, '', href);
@@ -74,3 +81,12 @@ $(window).on('popstate', function(e) {
     console.log(returnLocation.pathname.substring(1));
     loadContent(returnLocation.pathname.substring(1));
 });
+
+// $(window).scroll(function() {
+//     if($(window).scrollTop() >= 40) {
+//         $('#top-navbar').addClass('viewing-content');
+//     }
+//     else {
+//         $('#top-navbar').removeClass('viewing-content');
+//     }
+// });

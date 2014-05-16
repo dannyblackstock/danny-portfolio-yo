@@ -1,37 +1,77 @@
+// Positioning
+// Box model
+// Typographic
+// Visual
+
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "grid-settings";
 @import "mixins";
 @import "animations.scss";
+@import "404.scss";
 
-$mobile: new-breakpoint(min-width 500px 12);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+$mobile: new-breakpoint(min-width 450px 12);
 $tablet: new-breakpoint(min-width 650px 12);
+$laptop: new-breakpoint(min-width 815px 12);
+
+$bg-color: #fff;
 
 // Remove default margins.
 body, p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
+body {
+    background-color: $bg-color;
+    font-family: Lato;
+}
+
+p {
+    font-size: 18px;
+    line-height: 25px;
+}
+
 // nav bar
 #top-navbar {
-    @include outer-container;
+    // @include outer-container;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 5px 0;
     text-align: center;
+    background-color: $bg-color;
+    opacity: 0.85;
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    // when past a certain scroll position
+    &.viewing-content {
+
+    }
 }
 
 #logo {
-    @include span-columns(12);
-    background-color: #eee;
+    // @include span-columns(12);
+
 }
 
 #menu-bar {
-    @include span-columns(12);
-    background-color: #eee;
+    // @include span-columns(12);
 
     .menu-bar-item {
         display: inline-block;
     }
 }
 
+#contents-container {
+    margin: 75px 0 0 0;
+}
 // Home page (works).
 #work-container {
     @include outer-container;
@@ -42,43 +82,40 @@ body, p, h1, h2, h3, h4, h5, h6 {
     .portfolio-item {
         //@include span-columns(12);
         display: inline-block;
-        height: 265px;
-        width: 265px;
+        height: 215px;
 
-        // width: 50%;
+        width: 100%;
         position: relative;
-        margin: 2px;
+        border-left: 2px solid $bg-color;
+        border-right: 2px solid $bg-color;
+
+        text-decoration: none;
 
         background-color: #77f;
         cursor: pointer;
 
-        opacity: 0.82;
-        @include transition(opacity 0.3s ease);
+        opacity: 0.85;
+        -webkit-backface-visibility: none;
 
         @include transition-property (transform, opacity);
         @include transition-duration(0.2s);
         @include transition-timing-function(ease);
 
-        &:hover {
+        .touch &, &:hover {
             opacity: 1;
+            & .hover-description {
+                opacity: 1;
+            }
         }
 
         &:active {
-            @include transform(scale(0.98));
-            border: 0px;
+            @include transform(scale(0.97));
         }
-
-        // &:before {
-        //     content: '';
-        //     display: block;
-        //     padding-top: 90%;
-        // }
 
         @include media($mobile) {
             // @include span-columns(6);
             // @include omega(2n);
-            // height: 225px;
-            // width: 33.3333%;
+            height: 275px;
             background-color: green;
         }
 
@@ -86,20 +123,55 @@ body, p, h1, h2, h3, h4, h5, h6 {
             // @include omega-reset(2n);
             // @include span-columns(4);
             // @include omega(3n);
-            // height: 270px;
-            // width: 270px;
+            height: 250px;
+            width: 50%;
 
             background-color: red;
         }
+
+        @include media($laptop) {
+            // @include omega-reset(2n);
+            // @include span-columns(4);
+            // @include omega(3n);
+            height: 250px;
+            width: 33.333%;
+
+            background-color: pink;
+        }
+
+        .hover-description {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            padding: 10px 0;
+
+            color: white;
+            font-size: 18px;
+            @include linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.4) 90%, $fallback: transparent);
+            opacity: 0;
+
+            @include transition(opacity 0.3s ease);
+
+            .description-subtitle {
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+            .no-cssgradients & {
+                // use modernizr to detect whether or not the browser supports CSS gradients
+                background-color: rgba(0,0,0,0.4);
+            }
+        }
+    }
+
+    #awake-link {
+        background-image: url("../images/portfolio-item-thumbs/awake.jpg");
+        background-size: cover;
+        background-position: center;
     }
 }
 
-#portfolio-item-page-container {
-    padding: 20px;
-}
-
-#portfolio-item-contents-container {
-    p {
-        margin: 10px 0;
-    }
+#footer {
+    text-align: center;
 }
