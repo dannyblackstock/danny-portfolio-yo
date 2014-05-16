@@ -1,0 +1,255 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.animated.scaleUpIn {
+  -webkit-animation-name: scaleUpIn;
+  -moz-animation-name: scaleUpIn;
+  animation-name: scaleUpIn; }
+
+@-webkit-keyframes scaleUpIn {
+  from {
+    -webkit-transform: scale(0.95);
+    opacity: 0; }
+
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@-moz-keyframes scaleUpIn {
+  from {
+    -moz-transform: scale(0.95);
+    opacity: 0; }
+
+  to {
+    -moz-transform: scale(1);
+    opacity: 1; } }
+
+@-o-keyframes scaleUpIn {
+  from {
+    -o-transform: scale(0.95);
+    opacity: 0; }
+
+  to {
+    -o-transform: scale(1);
+    opacity: 1; } }
+
+@keyframes scaleUpIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0; }
+
+  to {
+    transform: scale(1);
+    opacity: 1; } }
+
+.animated.scaleUpOut {
+  -webkit-animation-name: scaleUpOut;
+  -moz-animation-name: scaleUpOut;
+  animation-name: scaleUpOut; }
+
+@-webkit-keyframes scaleUpOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -webkit-transform: scale(1.1);
+    opacity: 0; } }
+
+@-moz-keyframes scaleUpOut {
+  from {
+    -moz-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -moz-transform: scale(1.1);
+    opacity: 0; } }
+
+@-o-keyframes scaleUpOut {
+  from {
+    -o-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -o-transform: scale(1.1);
+    opacity: 0; } }
+
+@keyframes scaleUpOut {
+  from {
+    transform: scale(1);
+    opacity: 1; }
+
+  to {
+    transform: scale(1.1);
+    opacity: 0; } }
+
+.animated.scaleDownIn {
+  -webkit-animation-name: scaleDownIn;
+  -moz-animation-name: scaleDownIn;
+  animation-name: scaleDownIn; }
+
+@-webkit-keyframes scaleDownIn {
+  from {
+    -webkit-transform: scale(1.1);
+    opacity: 0; }
+
+  to {
+    -webkit-transform: scale(1);
+    opacity: 1; } }
+
+@-moz-keyframes scaleDownIn {
+  from {
+    -moz-transform: scale(1.1);
+    opacity: 0; }
+
+  to {
+    -moz-transform: scale(1);
+    opacity: 1; } }
+
+@-o-keyframes scaleDownIn {
+  from {
+    -o-transform: scale(1.1);
+    opacity: 0; }
+
+  to {
+    -o-transform: scale(1);
+    opacity: 1; } }
+
+@keyframes scaleDownIn {
+  from {
+    transform: scale(1.1);
+    opacity: 0; }
+
+  to {
+    transform: scale(1);
+    opacity: 1; } }
+
+.animated.scaleDownOut {
+  -webkit-animation-name: scaleDownOut;
+  -moz-animation-name: scaleDownOut;
+  animation-name: scaleDownOut; }
+
+@-webkit-keyframes scaleDownOut {
+  from {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -webkit-transform: scale(0.98);
+    opacity: 0; } }
+
+@-moz-keyframes scaleDownOut {
+  from {
+    -moz-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -moz-transform: scale(0.98);
+    opacity: 0; } }
+
+@-o-keyframes scaleDownOut {
+  from {
+    -o-transform: scale(1);
+    opacity: 1; }
+
+  to {
+    -o-transform: scale(0.98);
+    opacity: 0; } }
+
+@keyframes scaleDownOut {
+  from {
+    transform: scale(1);
+    opacity: 1; }
+
+  to {
+    transform: scale(0.98);
+    opacity: 0; } }
+
+#work-container {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+  #work-container:before, #work-container:after {
+    content: " ";
+    display: table; }
+  #work-container:after {
+    clear: both; }
+  #work-container .portfolio-item {
+    display: inline-block;
+    height: 215px;
+    width: 100%;
+    position: relative;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    text-decoration: none;
+    background-color: #77f;
+    cursor: pointer;
+    opacity: 0.85;
+    -webkit-backface-visibility: none;
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-transition-timing-function: ease;
+    -moz-transition-timing-function: ease;
+    transition-timing-function: ease; }
+    .touch #work-container .portfolio-item, #work-container .portfolio-item:hover {
+      opacity: 1; }
+      .touch #work-container .portfolio-item .hover-description, #work-container .portfolio-item:hover .hover-description {
+        opacity: 1; }
+    #work-container .portfolio-item:active {
+      -webkit-transform: scale(0.97);
+      -moz-transform: scale(0.97);
+      -ms-transform: scale(0.97);
+      -o-transform: scale(0.97);
+      transform: scale(0.97); }
+    @media screen and (min-width: 450px) {
+      #work-container .portfolio-item {
+        height: 275px;
+        background-color: green; } }
+    @media screen and (min-width: 650px) {
+      #work-container .portfolio-item {
+        height: 250px;
+        width: 50%;
+        background-color: red; } }
+    @media screen and (min-width: 815px) {
+      #work-container .portfolio-item {
+        height: 250px;
+        width: 33.333%;
+        background-color: pink; } }
+    #work-container .portfolio-item .hover-description {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 10px 0;
+      font-family: Lato;
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+      background-color: transparent;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.4)));
+      background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 90%);
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 90%);
+      opacity: 0;
+      -webkit-transition: opacity 0.3s ease;
+      -moz-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease; }
+      #work-container .portfolio-item .hover-description .description-subtitle {
+        font-size: 16px; }
+      .no-cssgradients #work-container .portfolio-item .hover-description {
+        background-color: rgba(0, 0, 0, 0.4); }
+  #work-container #awake-link {
+    background-image: url("../images/portfolio-item-thumbs/awake.jpg");
+    background-size: cover;
+    background-position: center; }

@@ -7,30 +7,56 @@
 @import "neat/neat";
 @import "grid-settings";
 @import "mixins";
+@import "variables";
 @import "animations.scss";
 @import "404.scss";
+@import "work.scss";
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-
-$mobile: new-breakpoint(min-width 450px 12);
-$tablet: new-breakpoint(min-width 650px 12);
-$laptop: new-breakpoint(min-width 815px 12);
-
-$bg-color: #fff;
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
 
 // Remove default margins.
-body, p, h1, h2, h3, h4, h5, h6 {
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
 }
 
 body {
     background-color: $bg-color;
+    font-family: Droid Serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: Lato;
+}
+
+h1 {
+    font-size: 36px;
 }
 
 p {
     font-size: 18px;
-    line-height: 25px;
+    line-height: 1.6;
+}
+
+a {
+    @include transition(color 0.25s);
+    color: black;
+
+    &:hover {
+        color: $link-color;
+    }
 }
 
 // nav bar
@@ -42,136 +68,108 @@ p {
     width: 100%;
     padding: 5px 0;
     text-align: center;
-    background-color: $bg-color;
-    opacity: 0.85;
+    @include linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0.85), $fallback: transparent);
 
     a {
         text-decoration: none;
-        color: black;
     }
 
     // when past a certain scroll position
     &.viewing-content {
 
     }
+
+    .no-cssgradients & {
+        // use modernizr to detect whether or not the browser supports CSS gradients
+        background-color: rgba(255,255,255, 0.9);
+    }
 }
 
 #logo {
-    // @include span-columns(12);
-
+    h1 {
+        font-weight: 300;
+    }
 }
 
 #menu-bar {
-    // @include span-columns(12);
-
     .menu-bar-item {
         display: inline-block;
+        font-family: Lato;
     }
 }
 
 #contents-container {
     margin: 75px 0 0 0;
 }
-// Home page (works).
-#work-container {
+
+.portfolio-content-container {
     @include outer-container;
-    // @include animation(scaleUp .5s ease 0 1);
-    // padding: 10px;
-    text-align: center;
 
-    .portfolio-item {
-        //@include span-columns(12);
-        display: inline-block;
-        height: 215px;
+    padding: 0 20px;
 
-        width: 100%;
-        position: relative;
-        border-left: 2px solid $bg-color;
-        border-right: 2px solid $bg-color;
+    p {
+        margin: 20px 0;
+    }
 
-        text-decoration: none;
+    .portfolio-content-header {
+        text-align: center;
+    }
 
-        background-color: #77f;
-        cursor: pointer;
+    .portfolio-content-subheader {
+        margin: 0 0 20px 0;
+        text-align: center;
+        color: $accent-color;
+        font-weight: 300;
+        font-size: 20px;
+    }
 
-        opacity: 0.85;
-        -webkit-backface-visibility: none;
-
-        @include transition-property (transform, opacity);
-        @include transition-duration(0.2s);
-        @include transition-timing-function(ease);
-
-        .touch &, &:hover {
-            opacity: 1;
-            & .hover-description {
-                opacity: 1;
-            }
-        }
-
-        &:active {
-            @include transform(scale(0.97));
-        }
-
-        @include media($mobile) {
-            // @include span-columns(6);
-            // @include omega(2n);
-            height: 275px;
-            background-color: green;
-        }
+    .project-info {
+        @include span-columns(12);
 
         @include media($tablet) {
-            // @include omega-reset(2n);
-            // @include span-columns(4);
-            // @include omega(3n);
-            height: 250px;
-            width: 50%;
-
-            background-color: red;
+            @include span-columns(4);
         }
 
-        @include media($laptop) {
-            // @include omega-reset(2n);
-            // @include span-columns(4);
-            // @include omega(3n);
-            height: 250px;
-            width: 33.333%;
-
-            background-color: pink;
-        }
-
-        .hover-description {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-
-            padding: 10px 0;
-
-            color: white;
-            font-size: 18px;
-            @include linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.4) 90%, $fallback: transparent);
-            opacity: 0;
-
-            @include transition(opacity 0.3s ease);
-
-            .description-subtitle {
-                font-size: 18px;
-                font-weight: 300;
-            }
-
-            .no-cssgradients & {
-                // use modernizr to detect whether or not the browser supports CSS gradients
-                background-color: rgba(0,0,0,0.4);
-            }
+        .small-title {
+            // margin: 20px 0 0 0;
+            font-family: Lato;
+            text-transform: uppercase;
+            color: $accent-color;
+            font-weight: 300;
         }
     }
 
-    #awake-link {
-        background-image: url("../images/portfolio-item-thumbs/awake.jpg");
-        background-size: cover;
-        background-position: center;
+    .project-content {
+        @include span-columns(12);
+
+
+        @include media($tablet) {
+            @include span-columns(8);
+        }
+    }
+}
+
+.videoWrapper {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%; // 16:9
+    padding-top: 25px;
+    background-image: url("../images/load.gif");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include transition(opacity 0.5s ease-in-out)
     }
 }
 
 #footer {
+    font-size: 18px;
     text-align: center;
 }

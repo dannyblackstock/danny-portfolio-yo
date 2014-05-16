@@ -1,40 +1,41 @@
 'use strict';
 
 var loadContent = function(href) {
-    var htmlRequest, animationStyle;
+    var htmlRequest;
+    var animationInStyle = 'fadeIn';
+    var animationOutStyle = 'fadeOut';
     var animationDuration = 0.4;
-    var $portfolioContent = $('#contents-container');
 
     $('body,html').animate({
         scrollTop: 0
-    }, 300);
+    }, 400);
 
-    $('#contents-container').animo({animation: 'scaleDownOut', duration: 0.4, keep: true, timing: 'ease-in-out'}, function() {
+    // if the url being looked for isn't empty
+    if (href && href !== '' && href !== ' ' && href !== '/'){
+        // automatically look in the container_contents folder
+        htmlRequest = 'container_contents/' + href + '.html';
+    }
+    // otherwise, just load the homepage
+    else {
+        htmlRequest = 'container_contents/work.html';
+        animationOutStyle = 'scaleDownOut';
+        animationInStyle = 'scaleUpIn';
+    }
 
-        // if the url being looked for isn't empty
-        if (href && href !== '' && href !== ' ' && href !== '/'){
-            // automatically look in the container_contents folder
-            htmlRequest = 'container_contents/' + href + '.html';
-            animationStyle = 'fadeIn';
-        }
-        // otherwise, just load the homepage
-        else {
-            htmlRequest = 'container_contents/work.html';
-            animationStyle = 'scaleUpIn';
-        }
+    $('#contents-container').animo({animation: animationOutStyle, duration: 0.4, keep: true, timing: 'ease-in-out'}, function() {
 
-        $portfolioContent.load(htmlRequest, function(responseText, textStatus) {
+        $('#contents-container').load(htmlRequest, function(responseText, textStatus) {
             if (textStatus === 'error') {
                 // show the 404 page if the page could not be found
-                $portfolioContent.load('404.html');
-                animationStyle = 'rotateIn';
+                $('#contents-container').load('404.html');
+                animationInStyle = 'rotateIn';
                 animationDuration = 0.8;
                 // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
                 // document.title = history.state.title;
             }
 
             // fade in loaded content
-            $('#contents-container').animo({animation: animationStyle, duration: animationDuration, timing: 'ease-in-out'});
+            $('#contents-container').animo({animation: animationInStyle, duration: animationDuration, timing: 'ease-in-out'});
         });
         console.log(htmlRequest);
     });
