@@ -705,9 +705,12 @@
     display: block;
     margin-right: 2.35765%;
     width: 100%;
-    margin: 40px 0; }
+    margin: 10px 0; }
     .project-content-container .project-image-container:last-child {
       margin-right: 0; }
+    @media screen and (min-width: 650px) {
+      .project-content-container .project-image-container {
+        margin: 40px 0; } }
     .project-content-container .project-image-container .project-image-caption {
       margin: 0 0 20px 0;
       text-align: center;

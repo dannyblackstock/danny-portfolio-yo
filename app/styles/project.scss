@@ -74,7 +74,11 @@
 
     .project-image-container {
         @include span-columns(12);
-        margin: 40px 0;
+        margin: 10px 0;
+
+        @include media($small-tablet) {
+            margin: 40px 0;
+        }
 
         .project-image-caption {
             margin: 0 0 20px 0;
