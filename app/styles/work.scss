@@ -8,12 +8,9 @@
 // Home page (works).
 #work-container {
     @include outer-container;
-    // @include animation(scaleUp .5s ease 0 1);
-    // padding: 10px;
     text-align: center;
 
     .portfolio-item {
-        //@include span-columns(12);
         display: inline-block;
         height: 215px;
 
@@ -46,16 +43,11 @@
         }
 
         @include media($mobile) {
-            // @include span-columns(6);
-            // @include omega(2n);
             height: 275px;
             background-color: green;
         }
 
         @include media($small-tablet) {
-            // @include omega-reset(2n);
-            // @include span-columns(4);
-            // @include omega(3n);
             height: 250px;
             width: 50%;
 
@@ -63,9 +55,6 @@
         }
 
         @include media($laptop) {
-            // @include omega-reset(2n);
-            // @include span-columns(4);
-            // @include omega(3n);
             height: 250px;
             width: 33.333%;
 
@@ -90,7 +79,6 @@
             @include transition(opacity 0.3s ease);
 
             .description-subtitle {
-                // margin-top: 2px;
                 font-size: 16px;
             }
 

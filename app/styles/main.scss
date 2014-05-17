@@ -11,6 +11,7 @@
 @import "animations.scss";
 @import "404.scss";
 @import "work.scss";
+@import "project.scss";
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
@@ -67,6 +68,15 @@ a {
     }
 }
 
+// for displaying elements only on touch devices
+.hide-no-touch {
+    display:none;
+
+    .touch & {
+        display:block;
+    }
+}
+
 #container {
     // to prevent scrollbars from showing during scale down page transitions
     overflow: hidden;
@@ -112,100 +122,6 @@ a {
 
 #contents-container {
     margin: 100px 0 0 0;
-}
-
-.portfolio-content-container {
-    @include outer-container;
-    padding: 0 20px;
-
-    .portfolio-content-header {
-        text-align: center;
-    }
-
-    .portfolio-content-subheader {
-        margin: 0 0 40px 0;
-        text-align: center;
-        color: $accent-color;
-        font-weight: 300;
-        font-size: 20px;
-    }
-
-    .project-info {
-        @include span-columns(12);
-
-        margin: 0 0 10px 0;
-
-        .project-info-item {
-            @include span-columns(12);
-            margin: 20px 0;
-            font-size: 18px;
-            line-height: 1.6;
-
-            @include media($small-tablet) {
-                @include span-columns(6);
-                @include omega(2n);
-                font-size: 20px;
-            }
-
-            @include media($laptop) {
-                @include omega-reset(2n);
-                @include span-columns(3);
-                @include omega(4);
-            }
-        }
-
-        .small-title {
-            font-family: Lato;
-            text-transform: uppercase;
-            color: $accent-color;
-            font-weight: 300;
-        }
-    }
-
-    .project-content {
-        @include span-columns(12);
-        margin: 20px 0;
-
-        @include media($big-tablet) {
-            @include span-columns(8);
-            @include shift(2);
-        }
-    }
-
-    .project-image-container {
-        @include span-columns(12);
-        margin: 40px 0;
-
-        .project-image-caption {
-            margin: 0 0 20px 0;
-            text-align: center;
-            font-size: 16px;
-            font-style: italic;
-            color: #909db8;
-
-            @include media($big-tablet) {
-                font-size: 20px;
-                margin: 0 0 30px 0;
-            }
-        }
-    }
-}
-
-#hover-before-after {
-    @include span-columns(12);
-    background-image: url("../images/awake/no-colouring.jpg");
-    background-size: 100%;
-
-    & img {
-        @include transition(opacity 0.3s);
-        @include backface-visibility(hidden);
-    }
-
-    &:hover {
-        & img {
-            opacity: 0;
-        }
-    }
 }
 
 .videoWrapper {
