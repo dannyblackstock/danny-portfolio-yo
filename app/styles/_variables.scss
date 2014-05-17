@@ -1,6 +1,7 @@
 $mobile: new-breakpoint(min-width 450px 12);
-$tablet: new-breakpoint(min-width 650px 12);
-$laptop: new-breakpoint(min-width 815px 12);
+$small-tablet: new-breakpoint(min-width 650px 12);
+$big-tablet: new-breakpoint(min-width 850px 12);
+$laptop: new-breakpoint(min-width 1000px 12);
 
 $bg-color: #fff;
 $accent-color: #909DB8;

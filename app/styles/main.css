@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -404,7 +404,7 @@
         height: 250px;
         width: 50%;
         background-color: red; } }
-    @media screen and (min-width: 815px) {
+    @media screen and (min-width: 1000px) {
       #work-container .portfolio-item {
         height: 250px;
         width: 33.333%;
@@ -445,6 +445,9 @@ h5,
 h6 {
   margin: 0; }
 
+img {
+  max-width: 100%; }
+
 body {
   background-color: white;
   font-family: Droid Serif; }
@@ -463,6 +466,9 @@ h1 {
 p {
   font-size: 18px;
   line-height: 1.6; }
+  @media screen and (min-width: 650px) {
+    p {
+      font-size: 20px; } }
 
 a {
   -webkit-transition: color 0.25s;
@@ -491,7 +497,8 @@ a {
   .no-cssgradients #top-navbar {
     background-color: rgba(255, 255, 255, 0.9); }
 
-#logo h1 {
+#logo {
+  font-family: Lato;
   font-weight: 300; }
 
 #menu-bar .menu-bar-item {
@@ -499,7 +506,7 @@ a {
   font-family: Lato; }
 
 #contents-container {
-  margin: 75px 0 0 0; }
+  margin: 100px 0 0 0; }
 
 .portfolio-content-container {
   *zoom: 1;
@@ -512,12 +519,10 @@ a {
     display: table; }
   .portfolio-content-container:after {
     clear: both; }
-  .portfolio-content-container p {
-    margin: 20px 0; }
   .portfolio-content-container .portfolio-content-header {
     text-align: center; }
   .portfolio-content-container .portfolio-content-subheader {
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
     text-align: center;
     color: #909db8;
     font-weight: 300;
@@ -526,17 +531,49 @@ a {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 100%; }
+    width: 100%;
+    margin: 0 0 10px 0; }
     .portfolio-content-container .project-info:last-child {
       margin-right: 0; }
-    @media screen and (min-width: 650px) {
-      .portfolio-content-container .project-info {
-        float: left;
-        display: block;
-        margin-right: 2.35765%;
-        width: 31.76157%; }
-        .portfolio-content-container .project-info:last-child {
-          margin-right: 0; } }
+    .portfolio-content-container .project-info .project-info-item {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 100%;
+      margin: 20px 0;
+      font-size: 18px;
+      line-height: 1.6; }
+      .portfolio-content-container .project-info .project-info-item:last-child {
+        margin-right: 0; }
+      @media screen and (min-width: 650px) {
+        .portfolio-content-container .project-info .project-info-item {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 48.82117%;
+          font-size: 20px; }
+          .portfolio-content-container .project-info .project-info-item:last-child {
+            margin-right: 0; }
+          .portfolio-content-container .project-info .project-info-item:nth-child(2n) {
+            margin-right: 0; }
+          .portfolio-content-container .project-info .project-info-item:nth-child(2n+1) {
+            clear: left; } }
+      @media screen and (min-width: 1000px) {
+        .portfolio-content-container .project-info .project-info-item {
+          float: left;
+          display: block;
+          margin-right: 2.35765%;
+          width: 23.23176%; }
+          .portfolio-content-container .project-info .project-info-item:nth-child(2n) {
+            margin-right: 2.35765%; }
+          .portfolio-content-container .project-info .project-info-item:nth-child(2n+1) {
+            clear: none; }
+          .portfolio-content-container .project-info .project-info-item:last-child {
+            margin-right: 0; }
+          .portfolio-content-container .project-info .project-info-item:nth-child(4) {
+            margin-right: 0; }
+          .portfolio-content-container .project-info .project-info-item:nth-child(4+1) {
+            clear: left; } }
     .portfolio-content-container .project-info .small-title {
       font-family: Lato;
       text-transform: uppercase;
@@ -546,23 +583,62 @@ a {
     float: left;
     display: block;
     margin-right: 2.35765%;
-    width: 100%; }
+    width: 100%;
+    margin: 20px 0; }
     .portfolio-content-container .project-content:last-child {
       margin-right: 0; }
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: 850px) {
       .portfolio-content-container .project-content {
         float: left;
         display: block;
         margin-right: 2.35765%;
-        width: 65.88078%; }
+        width: 65.88078%;
+        margin-left: 17.05961%; }
         .portfolio-content-container .project-content:last-child {
           margin-right: 0; } }
+  .portfolio-content-container .project-image-container {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 100%;
+    margin: 40px 0; }
+    .portfolio-content-container .project-image-container:last-child {
+      margin-right: 0; }
+    .portfolio-content-container .project-image-container .project-image-caption {
+      margin: 0 0 20px 0;
+      text-align: center;
+      font-size: 16px;
+      font-style: italic;
+      color: #909db8; }
+      @media screen and (min-width: 850px) {
+        .portfolio-content-container .project-image-container .project-image-caption {
+          font-size: 20px;
+          margin: 0 0 30px 0; } }
+
+#hover-before-after {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  background-image: url("../images/awake/no-colouring.jpg");
+  background-size: 100%; }
+  #hover-before-after:last-child {
+    margin-right: 0; }
+  #hover-before-after img {
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  #hover-before-after:hover img {
+    opacity: 0; }
 
 .videoWrapper {
   position: relative;
   height: 0;
   padding-bottom: 56.25%;
   padding-top: 25px;
+  margin: 20px 0;
   background-image: url("../images/load.gif");
   background-size: 30px;
   background-position: center;
@@ -580,3 +656,6 @@ a {
 #footer {
   font-size: 18px;
   text-align: center; }
+  @media screen and (min-width: 650px) {
+    #footer {
+      font-size: 20px; } }
