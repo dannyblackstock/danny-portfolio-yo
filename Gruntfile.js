@@ -108,7 +108,12 @@ module.exports = function (grunt) {
                             '.jpg': 'image/jpeg',
                             '.gif': 'image/gif',
                             '.png': 'image/png',
-                            '.ico': 'image/x-icon'
+                            '.ico': 'image/x-icon',
+                            '.woff': 'application/x-font-woff',
+                            '.ttf': 'application/x-font-ttf',
+                            '.svg': 'image/svg+xml',
+                            '.otf': 'application/x-font-otf',
+                            '.eot': 'application/vnd.ms-fontobject'
                         };
                         var isNotDirectoryOrHTML = validNonHMTLExtensions[ext];
 
