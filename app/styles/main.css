@@ -614,18 +614,21 @@
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px; }
+  padding: 0 10px; }
   .project-content-container:before, .project-content-container:after {
     content: " ";
     display: table; }
   .project-content-container:after {
     clear: both; }
+  @media screen and (min-width: 650px) {
+    .project-content-container {
+      padding: 0 20px; } }
   .project-content-container .project-content-header {
     text-align: center; }
   .project-content-container .project-content-subheader {
     margin: 0 0 40px 0;
     text-align: center;
-    color: #909db8;
+    color: #abb1bd;
     font-weight: 300;
     font-size: 20px; }
   .project-content-container .project-info {
@@ -679,10 +682,10 @@
           .project-content-container .project-info .project-info-item:nth-child(4n+1) {
             clear: left; } }
     .project-content-container .project-info .small-title {
-      font-family: Lato;
+      font-family: Lato, Helvetica, Arial, sans-serif;
       text-transform: uppercase;
       font-weight: 300;
-      color: #909db8; }
+      color: #abb1bd; }
   .project-content-container .project-content {
     float: left;
     display: block;
@@ -769,6 +772,20 @@
     .touch .hover-before-after .hover-changing-text {
       display: none; }
 
+@font-face {
+  font-family: Mono Social Icons Font;
+  font-weight: normal;
+  font-style: normal;
+  src: url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.eot");
+  src: url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.woff") format("woff"), url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.svg#Mono Social Icons Font") format("svg"); }
+
+.symbol, a.symbol:before {
+  font-family: 'Mono Social Icons Font'; }
+
+a.symbol:before {
+  margin-right: 0.3em;
+  font-size: 130%; }
+
 body,
 p,
 h1,
@@ -784,7 +801,7 @@ img {
 
 body {
   background-color: white;
-  font-family: Droid Serif; }
+  font-family: 'Droid Serif', Georgia, serif; }
 
 h1,
 h2,
@@ -792,7 +809,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Lato; }
+  font-family: Lato, Helvetica, Arial, sans-serif; }
 
 h1 {
   font-size: 36px; }
@@ -818,7 +835,8 @@ a {
     display: block; }
 
 #container {
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 100px 0 0 0; }
 
 #top-navbar {
   position: fixed;
@@ -844,9 +862,6 @@ a {
   display: inline-block;
   font-family: Lato; }
 
-#contents-container {
-  margin: 100px 0 0 0; }
-
 .videoWrapper {
   position: relative;
   height: 0;
@@ -868,8 +883,19 @@ a {
     transition: opacity 0.25s ease-in-out; }
 
 #footer {
-  font-size: 18px;
   text-align: center; }
-  @media screen and (min-width: 650px) {
-    #footer {
-      font-size: 20px; } }
+
+#footer-links {
+  list-style-type: none;
+  padding: 0; }
+  #footer-links li {
+    display: inline-block; }
+  #footer-links .footer-link {
+    font-size: 60px;
+    text-decoration: none;
+    color: #abb1bd;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s; }
+    #footer-links .footer-link:hover {
+      color: black; }

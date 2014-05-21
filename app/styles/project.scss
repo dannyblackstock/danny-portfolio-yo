@@ -9,7 +9,11 @@
 
 .project-content-container {
     @include outer-container;
-    padding: 0 20px;
+    padding: 0 10px;
+
+    @include media($small-tablet) {
+        padding: 0 20px;
+    }
 
     .project-content-header {
         text-align: center;
@@ -54,7 +58,7 @@
         }
 
         .small-title {
-            font-family: Lato;
+            font-family: Lato, Helvetica, Arial, sans-serif;
             text-transform: uppercase;
             font-weight: 300;
             color: $accent-color;

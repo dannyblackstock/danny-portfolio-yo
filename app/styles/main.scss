@@ -16,6 +16,18 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 
+@include font-face(Mono Social Icons Font, '../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10');
+
+.symbol, a.symbol:before {
+    font-family: 'Mono Social Icons Font';
+}
+
+a.symbol:before {
+    // content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+}
+
 // Remove default margins.
 body,
 p,
@@ -34,7 +46,7 @@ img {
 
 body {
     background-color: $bg-color;
-    font-family: Droid Serif;
+    font-family: 'Droid Serif', Georgia, serif;
 }
 
 h1,
@@ -43,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Lato;
+    font-family: Lato, Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -80,6 +92,7 @@ a {
 #container {
     // to prevent scrollbars from showing during scale down page transitions
     overflow: hidden;
+    margin: 100px 0 0 0;
 }
 
 // nav bar
@@ -120,10 +133,6 @@ a {
     }
 }
 
-#contents-container {
-    margin: 100px 0 0 0;
-}
-
 .videoWrapper {
     position: relative;
     height: 0;
@@ -146,10 +155,25 @@ a {
 }
 
 #footer {
-    font-size: 18px;
     text-align: center;
+}
 
-    @include media($small-tablet) {
-        font-size: 20px;
+#footer-links {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        display: inline-block;
+    }
+
+    .footer-link {
+        font-size: 60px;
+        text-decoration: none;
+        color: $accent-color;
+        @include transition(all 0.2s);
+
+        &:hover {
+            color: black;//darken($accent-color, 25%);
+        }
     }
 }
