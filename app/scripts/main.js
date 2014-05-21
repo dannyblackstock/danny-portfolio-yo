@@ -60,15 +60,32 @@ history.replaceState({myTag: true});
 $(document).on('click', 'a, area', function(e) {
     // prevent the normal link click behaviour from happening
     e.preventDefault();
-
-    // load the content based on the href attribute of the link
     var href = $(this).attr('href');
-
-    loadContent(href);
-
-    // add to the history and add some data ('myTag') to ignore the initial load popstate
-    history.pushState({myTag: true}, '', href);
     console.log('href: ' + href);
+
+    var arr = href.split('/');
+    // var result = arr[0] + '//' + arr[2];
+    // console.log(arr);
+
+    // if it is an external link, then open it in a new tab/window
+    if (arr[2]) {
+        var win = window.open(href, '_blank');
+        if(win){
+            //Browser has allowed it to be opened
+            win.focus();
+        }
+        else{
+            //Browser has blocked it
+            alert('Please allow popups for this site.');
+        }
+    }
+    else {
+        // add to the history and add some data ('myTag') to ignore the initial load popstate
+        history.pushState({myTag: true}, '', href);
+
+        // load the content based on the href attribute of the link
+        loadContent(href);
+    }
 });
 
 // when the user presses the back or forward buttons
