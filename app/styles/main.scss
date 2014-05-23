@@ -16,8 +16,6 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
 
-@include font-face(Mono Social Icons Font, '../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10');
-
 .symbol, a.symbol:before {
     font-family: 'Mono Social Icons Font';
 }
@@ -161,19 +159,58 @@ a {
 #footer-links {
     list-style-type: none;
     padding: 0;
-
-    li {
-        display: inline-block;
-    }
+    margin: 45px 0 30px 0;
 
     .footer-link {
-        font-size: 60px;
-        text-decoration: none;
-        color: $accent-color;
-        @include transition(all 0.2s);
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: 0 4px;
+
+        background-image: url("../images/social-icons-min.png");
+        background-size: 408px;
+        background-repeat: no-repeat;
+
+        opacity: 0.3;
+
+        @include transition(opacity 0.25s);
 
         &:hover {
-            color: black;//darken($accent-color, 25%);
+            opacity: 1;
+        }
+
+        &#email {
+            background-position: -354px;
+        }
+
+        &#youtube {
+            background-position: -12px;
+            margin: 0 4px 0 0px;
+        }
+
+        &#photo500px {
+            background-position: -183px;
+        }
+
+        &#dribbble {
+            background-position: -241px;
+        }
+
+        &#twitter {
+            background-position: -298px;
+        }
+
+        &#linkedin {
+            background-position: -125px;
+        }
+
+        &#vimeo {
+            background-position: -67px;
+        }
+
+        a {
+            display: block;
+            height: 100%;
         }
     }
 }

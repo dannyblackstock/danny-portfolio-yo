@@ -65,10 +65,9 @@ $(document).on('click', 'a, area', function(e) {
 
     var arr = href.split('/');
     // var result = arr[0] + '//' + arr[2];
-    // console.log(arr);
 
     // if it is an external link, then open it in a new tab/window
-    if (arr[2]) {
+    if ((arr[2])) {
         var win = window.open(href, '_blank');
         if(win){
             //Browser has allowed it to be opened
@@ -78,6 +77,11 @@ $(document).on('click', 'a, area', function(e) {
             //Browser has blocked it
             alert('Please allow popups for this site.');
         }
+    }
+    // if it's a 'mailto' link
+    else if (href.indexOf('mailto:') > -1) {
+        // open it
+        window.location.href = href;
     }
     else {
         // add to the history and add some data ('myTag') to ignore the initial load popstate

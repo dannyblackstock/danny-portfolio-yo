@@ -772,12 +772,75 @@
     .touch .hover-before-after .hover-changing-text {
       display: none; }
 
-@font-face {
-  font-family: Mono Social Icons Font;
-  font-weight: normal;
-  font-style: normal;
-  src: url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.eot");
-  src: url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.eot?#iefix") format("embedded-opentype"), url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.woff") format("woff"), url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.ttf") format("truetype"), url("../MonoSocialIconsFont-1.10/MonoSocialIconsFont-1.10.svg#Mono Social Icons Font") format("svg"); }
+#project-controls {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px; }
+  #project-controls:before, #project-controls:after {
+    content: " ";
+    display: table; }
+  #project-controls:after {
+    clear: both; }
+  @media screen and (min-width: 650px) {
+    #project-controls {
+      padding: 0 20px; } }
+  #project-controls .arrow {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    height: 50px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    -webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    transition: opacity 0.25s; }
+    #project-controls .arrow:last-child {
+      margin-right: 0; }
+    #project-controls .arrow:hover {
+      opacity: 1; }
+      #project-controls .arrow:hover .arrow-hover-image {
+        opacity: 1; }
+      #project-controls .arrow:hover #left-arrow-image {
+        -webkit-transform: translate(40px, 0);
+        -moz-transform: translate(40px, 0);
+        -ms-transform: translate(40px, 0);
+        -o-transform: translate(40px, 0);
+        transform: translate(40px, 0); }
+      #project-controls .arrow:hover #right-arrow-image {
+        -webkit-transform: translate(-40px, 0);
+        -moz-transform: translate(-40px, 0);
+        -ms-transform: translate(-40px, 0);
+        -o-transform: translate(-40px, 0);
+        transform: translate(-40px, 0); }
+    #project-controls .arrow.left-arrow {
+      background-image: url("../images/arrow-left.png"); }
+    #project-controls .arrow.right-arrow {
+      background-image: url("../images/arrow-right.png");
+      background-position: right; }
+      #project-controls .arrow.right-arrow .arrow-hover-image {
+        float: right; }
+    #project-controls .arrow .arrow-hover-image {
+      max-height: 60px;
+      opacity: 0;
+      margin-top: -6px;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out; }
+  #project-controls .view-all {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px; }
+    #project-controls .view-all:last-child {
+      margin-right: 0; }
 
 .symbol, a.symbol:before {
   font-family: 'Mono Social Icons Font'; }
@@ -887,15 +950,37 @@ a {
 
 #footer-links {
   list-style-type: none;
-  padding: 0; }
-  #footer-links li {
-    display: inline-block; }
+  padding: 0;
+  margin: 45px 0 30px 0; }
   #footer-links .footer-link {
-    font-size: 60px;
-    text-decoration: none;
-    color: #abb1bd;
-    -webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s; }
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 4px;
+    background-image: url("../images/social-icons-min.png");
+    background-size: 408px;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    -webkit-transition: opacity 0.25s;
+    -moz-transition: opacity 0.25s;
+    transition: opacity 0.25s; }
     #footer-links .footer-link:hover {
-      color: black; }
+      opacity: 1; }
+    #footer-links .footer-link#email {
+      background-position: -354px; }
+    #footer-links .footer-link#youtube {
+      background-position: -12px;
+      margin: 0 4px 0 0px; }
+    #footer-links .footer-link#photo500px {
+      background-position: -183px; }
+    #footer-links .footer-link#dribbble {
+      background-position: -241px; }
+    #footer-links .footer-link#twitter {
+      background-position: -298px; }
+    #footer-links .footer-link#linkedin {
+      background-position: -125px; }
+    #footer-links .footer-link#vimeo {
+      background-position: -67px; }
+    #footer-links .footer-link a {
+      display: block;
+      height: 100%; }
