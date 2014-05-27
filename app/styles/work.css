@@ -214,7 +214,7 @@
       -ms-transform: scale(0.97);
       -o-transform: scale(0.97);
       transform: scale(0.97); }
-    @media screen and (min-width: 450px) {
+    @media screen and (min-width: 485px) {
       #work-container .portfolio-item {
         height: 275px;
         background-color: green; } }

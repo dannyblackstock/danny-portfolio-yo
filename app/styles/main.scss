@@ -65,7 +65,7 @@ p {
     line-height: 1.6;
 
     @include media($small-tablet) {
-        font-size: 20px;
+        // font-size: 20px;
     }
 }
 
@@ -90,7 +90,7 @@ a {
 #container {
     // to prevent scrollbars from showing during scale down page transitions
     overflow: hidden;
-    margin: 100px 0 0 0;
+    margin: 80px 0 0 0;
 }
 
 // nav bar
@@ -132,6 +132,7 @@ a {
 }
 
 .videoWrapper {
+    @include span-columns(12);
     position: relative;
     height: 0;
     padding-bottom: 56.25%; // 16:9
