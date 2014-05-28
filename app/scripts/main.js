@@ -1,14 +1,12 @@
 'use strict';
 
-var loadContent = function(href) {
+var loadContent = function(href, animationOutStyle, animationInStyle, animationOutDuration, animationInDuration) {
     var htmlRequest;
-    var animationInStyle = 'fadeIn';
-    var animationOutStyle = 'fadeOut';
-    var animationDuration = 0.4;
-
-    $('body,html').animate({
-        scrollTop: 0
-    }, 400);
+    // default values for animatin styles
+    animationOutStyle = typeof animationOutStyle !== 'undefined' ? animationOutStyle : 'fadeOut';
+    animationInStyle = typeof animationInStyle !== 'undefined' ? animationInStyle : 'fadeIn';
+    animationOutDuration = typeof animationOutDuration !== 'undefined' ? animationOutDuration : 0.4;
+    animationInDuration = typeof animationInDuration !== 'undefined' ? animationInDuration : 0.4;
 
     // if the url being looked for isn't empty
     if (href && href !== '' && href !== ' ' && href !== '/'){
@@ -22,20 +20,23 @@ var loadContent = function(href) {
         animationInStyle = 'scaleDownIn';
     }
 
-    $('#contents-container').animo({animation: animationOutStyle, duration: 0.4, keep: true, timing: 'ease-in-out'}, function() {
+    $('#contents-container').animo({animation: animationOutStyle, duration: animationOutDuration, keep: true, timing: 'ease-in-out'}, function() {
+
+        $('html,body').scrollTop(0);
 
         $('#contents-container').load(htmlRequest, function(responseText, textStatus) {
+
             if (textStatus === 'error') {
                 // show the 404 page if the page could not be found
                 $('#contents-container').load('404.html');
                 animationInStyle = 'rotateIn';
-                animationDuration = 0.8;
+                animationInDuration = 0.8;
                 // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
                 // document.title = history.state.title;
             }
 
             // fade in loaded content
-            $('#contents-container').animo({animation: animationInStyle, duration: animationDuration, timing: 'ease-in-out'});
+            $('#contents-container').animo({animation: animationInStyle, duration: animationInDuration, timing: 'ease-in-out'});
         });
         console.log(htmlRequest);
     });
@@ -78,17 +79,45 @@ $(document).on('click', 'a, area', function(e) {
             alert('Please allow popups for this site.');
         }
     }
+
     // if it's a 'mailto' link
     else if (href.indexOf('mailto:') > -1) {
         // open it
         window.location.href = href;
     }
+
+    // if it's a pdf link
+    else if (href.indexOf('.pdf') > -1) {
+        // open it
+        var win = window.open(href, '_blank');
+        if(win){
+            //Browser has allowed it to be opened
+            win.focus();
+        }
+        else{
+            //Browser has blocked it
+            alert('Please allow popups for this site.');
+        }
+    }
+
+    // otherwise, it's an internal, relative link.
     else {
         // add to the history and add some data ('myTag') to ignore the initial load popstate
         history.pushState({myTag: true}, '', href);
 
-        // load the content based on the href attribute of the link
-        loadContent(href);
+        // check if the link is a navigation arrow in the class name, so a slide transition can be used instead.
+        if (($(this).attr('class')) && ($(this).attr('class').indexOf('right-arrow') > -1)) {
+            loadContent(href, 'slideOutLeft');
+        }
+
+        else if (($(this).attr('class') && $(this).attr('class').indexOf('left-arrow') > -1)) {
+            loadContent(href, 'slideOutRight');
+        }
+
+        else {
+            // load the content based on the href attribute of the link
+            loadContent(href);
+        }
     }
 });
 
