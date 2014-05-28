@@ -113,7 +113,8 @@ module.exports = function (grunt) {
                             '.ttf': 'application/x-font-ttf',
                             '.svg': 'image/svg+xml',
                             '.otf': 'application/x-font-otf',
-                            '.eot': 'application/vnd.ms-fontobject'
+                            '.eot': 'application/vnd.ms-fontobject',
+                            '.pdf': 'application/pdf'
                         };
                         var isNotDirectoryOrHTML = validNonHMTLExtensions[ext];
 
