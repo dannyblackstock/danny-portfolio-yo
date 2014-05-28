@@ -15,6 +15,10 @@
         padding: 0 20px;
     }
 
+    a {
+        font-size: 18px;
+    }
+
     .project-content-header {
         text-align: center;
         font-size: 20px;
@@ -87,7 +91,7 @@
 
     .project-image-container {
         @include span-columns(12);
-        margin: 10px 0;
+        margin: 20px 0;
 
         @include media($small-tablet) {
             margin: 40px 0;
@@ -95,7 +99,9 @@
     }
 
     .project-caption {
-        margin: 0 0 20px 0;
+        width: 100%;
+        margin: 10px 0 0 0;
+        float: left;
 
         text-align: center;
         line-height: 1.3;
@@ -105,8 +111,7 @@
         color: #909db8;
 
         @include media($big-tablet) {
-            margin: 0 0 30px 0;
-
+            margin: 20px 0 0 0;
             font-size: 18px;
         }
     }
@@ -210,6 +215,7 @@
 
 .arrow {
     @include span-columns(2);
+        @include backface-visibility(hidden);
 
 
     height: 45px;
@@ -223,7 +229,7 @@
 
     @include media($mobile) {
         height: 70px;
-        background-size: 25px;
+        // background-size: 25px;
     }
 
     // @include media($big-screen) {
@@ -246,7 +252,7 @@
     //     }
     // }
 
-    &:hover {
+    .no-touch &:hover {
         opacity: 1;
 
         .arrow-hover-image {

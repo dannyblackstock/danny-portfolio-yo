@@ -21,6 +21,8 @@
 
         text-decoration: none;
 
+        background-size: cover;
+        background-position: center;
         background-color: #77f;
         cursor: pointer;
 
@@ -72,6 +74,7 @@
             color: white;
             font-size: 20px;
             font-weight: 300;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 
             @include linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.4) 90%, $fallback: transparent);
 
@@ -91,7 +94,9 @@
 
     #awake-link {
         background-image: url("../images/portfolio-item-thumbs/awake.jpg");
-        background-size: cover;
-        background-position: center;
+    }
+
+    #weather-link {
+        background-image: url("../images/portfolio-item-thumbs/wn-banner.jpg");
     }
 }

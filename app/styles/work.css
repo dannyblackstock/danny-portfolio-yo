@@ -191,6 +191,8 @@
     border-left: 2px solid white;
     border-right: 2px solid white;
     text-decoration: none;
+    background-size: cover;
+    background-position: center;
     background-color: #77f;
     cursor: pointer;
     opacity: 0.85;
@@ -237,6 +239,7 @@
       color: white;
       font-size: 20px;
       font-weight: 300;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
       background-color: transparent;
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(90%, rgba(0, 0, 0, 0.4)));
       background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4) 90%);
@@ -250,6 +253,6 @@
       .no-cssgradients #work-container .portfolio-item .hover-description {
         background-color: rgba(0, 0, 0, 0.4); }
   #work-container #awake-link {
-    background-image: url("../images/portfolio-item-thumbs/awake.jpg");
-    background-size: cover;
-    background-position: center; }
+    background-image: url("../images/portfolio-item-thumbs/awake.jpg"); }
+  #work-container #weather-link {
+    background-image: url("../images/portfolio-item-thumbs/wn-banner.jpg"); }

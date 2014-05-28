@@ -87,10 +87,51 @@ a {
     }
 }
 
+.center {
+    @include span-columns(12);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.half {
+    @include span-columns(12);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+    @include media($small-tablet) {
+        @include span-columns(6);
+        &.right-half {
+            @include omega();
+        }
+    }
+
+    img {
+        margin-bottom: 10px;
+        border: 1px solid #aaa;
+        opacity: 0.75;
+        @include transition(opacity 0.2s ease-in-out);
+
+        @include media($big-tablet) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &:hover img{
+        opacity: 1;
+    }
+}
+
 #container {
     // to prevent scrollbars from showing during scale down page transitions
     overflow: hidden;
     margin: 80px 0 0 0;
+}
+
+#contents-container {
+    @include backface-visibility(hidden);
+    -webkit-transform: translateZ(0);
+    -webkit-perspective: 1000;
 }
 
 // nav bar
@@ -154,6 +195,12 @@ a {
 }
 
 #footer {
+    @include animation-name(fadeIn);
+    @include animation-duration(0.5s);
+    @include animation-timing-function(ease);
+    @include animation-delay(1.5s);
+    @include animation-fill-mode(forwards);
+    opacity: 0;
     text-align: center;
 }
 
@@ -164,12 +211,12 @@ a {
 
     .footer-link {
         display: inline-block;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         margin: 0 4px;
 
         background-image: url("../images/social-icons-min.png");
-        background-size: 408px;
+        background-size: 304px;
         background-repeat: no-repeat;
 
         opacity: 0.3;
@@ -181,28 +228,28 @@ a {
         }
 
         &#email {
-            background-position: -354px;
+            background-position: -263px;
         }
 
         &#youtube {
-            background-position: -12px;
+            background-position: -9px;
             margin: 0 4px 0 0px;
         }
 
         &#photo500px {
-            background-position: -183px;
+            background-position: -136px;
         }
 
         &#dribbble {
-            background-position: -241px;
+            background-position: -179px;
         }
 
         &#twitter {
-            background-position: -298px;
+            background-position: -222px;
         }
 
         &#linkedin {
-            background-position: -125px;
+            background-position: -93px;
         }
 
         &#vimeo {
