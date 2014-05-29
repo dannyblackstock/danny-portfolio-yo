@@ -22,8 +22,6 @@ var loadContent = function(href, animationOutStyle, animationInStyle, animationO
 
     $('#contents-container').animo({animation: animationOutStyle, duration: animationOutDuration, keep: true, timing: 'ease-in-out'}, function() {
 
-        $('html,body').scrollTop(0);
-
         $('#contents-container').load(htmlRequest, function(responseText, textStatus) {
 
             if (textStatus === 'error') {
@@ -35,6 +33,8 @@ var loadContent = function(href, animationOutStyle, animationInStyle, animationO
                 // document.title = history.state.title;
             }
 
+            // scroll to the top of the page
+            $('html,body').scrollTop(0);
             // fade in loaded content
             $('#contents-container').animo({animation: animationInStyle, duration: animationInDuration, timing: 'ease-in-out'});
         });

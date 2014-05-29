@@ -70,7 +70,7 @@ p {
 }
 
 a {
-    @include transition(color 0.25s);
+    @include transition(color 0.2s);
     color: black;
 
     &:hover {
