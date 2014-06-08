@@ -229,6 +229,8 @@
         font-size: 16px; }
       .no-cssgradients #work-container .portfolio-item .hover-description {
         background-color: rgba(0, 0, 0, 0.4); }
+  #work-container #siat-outreach-link {
+    background-image: url("../images/portfolio-item-thumbs/siat-outreach-thumbnail.jpg"); }
   #work-container #active-textbook-link {
     background-image: url("../images/portfolio-item-thumbs/active-textbook.jpg"); }
   #work-container #awake-link {

@@ -1,0 +1,124 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@import "grid-settings";
+@import "variables";
+
+#navbar-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+
+  @include linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0.85), $fallback: transparent);
+
+  a {
+    text-decoration: none;
+  }
+
+  // when past a certain scroll position
+  &.viewing-content {
+
+  }
+
+  .no-cssgradients & {
+    // use modernizr to detect whether or not the browser supports CSS gradients
+    background-color: rgba(255,255,255, 0.9);
+  }
+}
+
+#navbar-contents {
+  @include outer-container;
+  padding: 0 10px;
+
+  @include media($small-tablet) {
+    padding: 0 20px;
+  }
+}
+
+#logo-container {
+  display: none;
+  position: relative;
+  float: left;
+  height: $nav-bar-height;
+
+  @include media($small-mobile) {
+    display: block;
+  }
+
+  .logo {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    height: 100%;
+
+    width: $logo-width;
+    vertical-align: middle;
+
+    background-image: url("../images/db-logo-black-70.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include transition(opacity 0.5s);
+  }
+
+  .logo-hover {
+    @extend .logo;
+    opacity: 0;
+    background-image: url("../images/db-logo-red-70.png");
+  }
+
+  &:hover {
+    .logo-hover {
+      opacity: 1;
+    }
+  }
+}
+
+#logo-text {
+  display: none;
+  height: 100%;
+  margin-left: $logo-width + 10px;
+
+  line-height: 60px;
+
+  @include media($mobile) {
+    display: inline-block;
+  }
+}
+
+#nav-links {
+  text-align: center;
+  width: 100%;
+
+  @include media($small-mobile) {
+    float: right;
+    width: auto;
+    text-align: left;
+  }
+
+  .nav-link {
+    display: inline-block;
+    height: 100%;
+    line-height: $nav-bar-height;
+    padding: 0 5px;
+    font-size: 14px;
+
+    @include media($small-mobile) {
+      font-size: 16px;
+    }
+
+    a {
+      display: inline-block;
+      height: 100%;
+    }
+
+    // last link has no right padding
+    &:last-child {
+      padding: 0 0 0 5px;
+    }
+  }
+}

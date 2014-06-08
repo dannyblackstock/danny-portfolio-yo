@@ -1,12 +1,20 @@
+// Break points
+$small-mobile: new-breakpoint(min-width 305px 12);
 $mobile: new-breakpoint(min-width 485px 12);
 $small-tablet: new-breakpoint(min-width 650px 12);
 $big-tablet: new-breakpoint(min-width 850px 12);
 $laptop: new-breakpoint(min-width 1000px 12);
 $big-screen: new-breakpoint(min-width 1200px 12);
 
+// Colors
 $bg-color: #fff;
 $accent-color: #ABB1BD;
 $caption-color: #909db8;
 $link-color: #D61E1E;//#1E51D6;
 
+// Fonts
 $main-font-size: 17px;
+
+// Nav bar
+$nav-bar-height: 60px;
+$logo-width: 35px;

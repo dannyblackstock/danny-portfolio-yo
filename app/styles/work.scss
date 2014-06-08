@@ -7,103 +7,107 @@
 
 // Home page (works).
 #work-container {
-    @include outer-container;
-    text-align: center;
+  @include outer-container;
+  text-align: center;
 
-    .portfolio-item {
-        display: inline-block;
-        height: 215px;
+  .portfolio-item {
+    display: inline-block;
+    height: 215px;
 
-        width: 100%;
-        position: relative;
-        // border-left: 2px solid $bg-color;
-        // border-right: 2px solid $bg-color;
+    width: 100%;
+    position: relative;
+    // border-left: 2px solid $bg-color;
+    // border-right: 2px solid $bg-color;
 
-        text-decoration: none;
+    text-decoration: none;
 
-        background-size: cover;
-        background-position: center;
-        background-color: #77f;
-        cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-color: #77f;
+    cursor: pointer;
 
-        opacity: 0.85;
-        -webkit-backface-visibility: none;
+    opacity: 0.85;
+    -webkit-backface-visibility: none;
 
-        @include transition-property (transform, opacity);
-        @include transition-duration(0.2s);
-        @include transition-timing-function(ease);
+    @include transition-property (transform, opacity);
+    @include transition-duration(0.2s);
+    @include transition-timing-function(ease);
 
-        .touch &, &:hover {
-            opacity: 1;
-            & .hover-description {
-                opacity: 1;
-            }
-        }
-
-        &:active {
-            @include transform(scale(0.97));
-        }
-
-        @include media($mobile) {
-            height: 275px;
-            background-color: green;
-        }
-
-        @include media($small-tablet) {
-            height: 250px;
-            width: 50%;
-
-            background-color: red;
-        }
-
-        @include media($laptop) {
-            height: 275px;
-            width: 33.333%;
-
-            background-color: pink;
-        }
-
-        .hover-description {
-            // position: absolute;
-            height: 100%;
-
-            padding: 10px 0;
-
-            font-family: Lato;
-            color: white;
-            font-size: 20px;
-            font-weight: 300;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-
-            @include linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0) 55%, $fallback: transparent);
-
-            opacity: 0;
-            @include transition(opacity 0.3s ease);
-
-            .description-subtitle {
-                font-size: 16px;
-            }
-
-            .no-cssgradients & {
-                // use modernizr to detect whether or not the browser supports CSS gradients
-                background-color: rgba(0,0,0,0.4);
-            }
-        }
+    .touch &, &:hover {
+      opacity: 1;
+      & .hover-description {
+        opacity: 1;
+      }
     }
 
-    #active-textbook-link {
-        background-image: url("../images/portfolio-item-thumbs/active-textbook.jpg");
+    &:active {
+      @include transform(scale(0.97));
     }
 
-    #awake-link {
-        background-image: url("../images/portfolio-item-thumbs/awake.jpg");
+    @include media($mobile) {
+      height: 275px;
+      background-color: green;
     }
 
-    #weather-link {
-        background-image: url("../images/portfolio-item-thumbs/weather-network.jpg");
+    @include media($small-tablet) {
+      height: 250px;
+      width: 50%;
+
+      background-color: red;
     }
 
-    #city-impact-link {
-        background-image: url("../images/portfolio-item-thumbs/city-impact.jpg")
+    @include media($laptop) {
+      height: 275px;
+      width: 33.333%;
+
+      background-color: pink;
     }
+
+    .hover-description {
+      // position: absolute;
+      height: 100%;
+
+      padding: 10px 0;
+
+      font-family: Lato;
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+
+      @include linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0) 55%, $fallback: transparent);
+
+      opacity: 0;
+      @include transition(opacity 0.3s ease);
+
+      .description-subtitle {
+        font-size: 16px;
+      }
+
+      .no-cssgradients & {
+        // use modernizr to detect whether or not the browser supports CSS gradients
+        background-color: rgba(0,0,0,0.4);
+      }
+    }
+  }
+
+  #siat-outreach-link {
+    background-image: url("../images/portfolio-item-thumbs/siat-outreach-thumbnail.jpg");
+  }
+
+  #active-textbook-link {
+    background-image: url("../images/portfolio-item-thumbs/active-textbook.jpg");
+  }
+
+  #awake-link {
+    background-image: url("../images/portfolio-item-thumbs/awake.jpg");
+  }
+
+  #weather-link {
+    background-image: url("../images/portfolio-item-thumbs/weather-network.jpg");
+  }
+
+  #city-impact-link {
+    background-image: url("../images/portfolio-item-thumbs/city-impact.jpg")
+  }
 }

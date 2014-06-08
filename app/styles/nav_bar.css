@@ -1,0 +1,92 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#navbar-container {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0.85));
+  background-image: linear-gradient(white, rgba(255, 255, 255, 0.85)); }
+  #navbar-container a {
+    text-decoration: none; }
+  .no-cssgradients #navbar-container {
+    background-color: rgba(255, 255, 255, 0.9); }
+
+#navbar-contents {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px; }
+  #navbar-contents:after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media screen and (min-width: 650px) {
+    #navbar-contents {
+      padding: 0 20px; } }
+
+#logo-container {
+  display: none;
+  position: relative;
+  float: left;
+  height: 60px; }
+  @media screen and (min-width: 305px) {
+    #logo-container {
+      display: block; } }
+  #logo-container .logo, #logo-container .logo-hover {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 35px;
+    vertical-align: middle;
+    background-image: url("../images/db-logo-black-70.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+  #logo-container .logo-hover {
+    opacity: 0;
+    background-image: url("../images/db-logo-red-70.png"); }
+  #logo-container:hover .logo-hover {
+    opacity: 1; }
+
+#logo-text {
+  display: none;
+  height: 100%;
+  margin-left: 45px;
+  line-height: 60px; }
+  @media screen and (min-width: 485px) {
+    #logo-text {
+      display: inline-block; } }
+
+#nav-links {
+  text-align: center;
+  width: 100%; }
+  @media screen and (min-width: 305px) {
+    #nav-links {
+      float: right;
+      width: auto;
+      text-align: left; } }
+  #nav-links .nav-link {
+    display: inline-block;
+    height: 100%;
+    line-height: 60px;
+    padding: 0 5px;
+    font-size: 14px; }
+    @media screen and (min-width: 305px) {
+      #nav-links .nav-link {
+        font-size: 16px; } }
+    #nav-links .nav-link a {
+      display: inline-block;
+      height: 100%; }
+    #nav-links .nav-link:last-child {
+      padding: 0 0 0 5px; }
