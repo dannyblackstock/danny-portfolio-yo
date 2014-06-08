@@ -71,9 +71,9 @@ p, ol, ul {
   font-size: $main-font-size;
   line-height: 1.7;
 
-  @include media($small-tablet) {
-    // font-size: 20px;
-  }
+  /* @include media (\$big-screen) {
+    font-size: \$main-font-size + 2px;
+  } */
 }
 
 a {
@@ -135,6 +135,15 @@ a {
   }
 }
 
+.contents-container {
+  @include outer-container;
+  padding: 0 10px;
+
+  @include media($small-tablet) {
+    padding: 0 20px;
+  }
+}
+
 .videoWrapper {
   @include span-columns(12);
   position: relative;
@@ -163,12 +172,11 @@ a {
   margin: ($nav-bar-height + 10px) 0 0 0;
 }
 
-#contents-container {
+#animation-container {
   @include backface-visibility(hidden);
   -webkit-transform: translateZ(0);
   -webkit-perspective: 1000;
 }
-
 
 #footer {
   @include animation-name(fadeIn);

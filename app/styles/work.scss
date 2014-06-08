@@ -7,7 +7,7 @@
 
 // Home page (works).
 #work-container {
-  @include outer-container;
+  @include outer-container();
   text-align: center;
 
   .portfolio-item {
@@ -29,7 +29,7 @@
     opacity: 0.85;
     -webkit-backface-visibility: none;
 
-    @include transition-property (transform, opacity);
+    @include transition-property(transform, opacity);
     @include transition-duration(0.2s);
     @include transition-timing-function(ease);
 

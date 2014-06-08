@@ -20,13 +20,13 @@ var loadContent = function(href, animationOutStyle, animationInStyle, animationO
         animationInStyle = 'scaleDownIn';
     }
 
-    $('#contents-container').animo({animation: animationOutStyle, duration: animationOutDuration, keep: true, timing: 'ease-in-out'}, function() {
+    $('#animation-container').animo({animation: animationOutStyle, duration: animationOutDuration, keep: true, timing: 'ease-in-out'}, function() {
 
-        $('#contents-container').load(htmlRequest, function(responseText, textStatus) {
+        $('#animation-container').load(htmlRequest, function(responseText, textStatus) {
 
             if (textStatus === 'error') {
                 // show the 404 page if the page could not be found
-                $('#contents-container').load('404.html');
+                $('#animation-container').load('404.html');
                 animationInStyle = 'rotateIn';
                 animationInDuration = 0.8;
                 // history.pushState({title: 'Danny Blackstock | 404'}, 'Danny Blackstock | 404', '404');
@@ -36,7 +36,7 @@ var loadContent = function(href, animationOutStyle, animationInStyle, animationO
             // scroll to the top of the page
             $('html,body').scrollTop(0);
             // fade in loaded content
-            $('#contents-container').animo({animation: animationInStyle, duration: animationInDuration, timing: 'ease-in-out'});
+            $('#animation-container').animo({animation: animationInStyle, duration: animationInDuration, timing: 'ease-in-out'});
         });
         console.log(htmlRequest);
     });

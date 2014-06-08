@@ -7,17 +7,7 @@
 @import "variables";
 @import "animations.scss";
 
-.project-content-container {
-    @include outer-container;
-    padding: 0 10px;
-
-    @include media($small-tablet) {
-        padding: 0 20px;
-    }
-
-    a {
-        font-size: $main-font-size;
-    }
+.project-container {
 
     .project-content-header {
         text-align: center;
@@ -204,14 +194,9 @@
     // opacity: 0;
 
     @include outer-container;
-    padding: 0 10px;
     height: 70px;
     margin-top: 20px;
     margin-bottom: 20px;
-
-    @include media($small-tablet) {
-        padding: 0 20px;
-    }
 
     // @include media($big-screen) {
     //     width:100%;
@@ -224,8 +209,7 @@
 
 .arrow {
     @include span-columns(2);
-        @include backface-visibility(hidden);
-
+    @include backface-visibility(hidden);
 
     height: 45px;
 
