@@ -76,6 +76,25 @@ p, ol, ul {
   } */
 }
 
+// usually paragraphs
+.body-content {
+    @include span-columns(12);
+    margin: 20px 0;
+
+    @include media($big-tablet) {
+        @include span-columns(8);
+        @include shift(2);
+    }
+}
+
+.paragraph-heading {
+  @extend .body-content;
+  font-weight: bold;
+  margin-bottom: 0;
+  font-family: Lato;
+  font-size: 18px;
+}
+
 a {
   @include transition(color 0.2s);
   color: black;
@@ -166,6 +185,41 @@ a {
   }
 }
 
+.image-container {
+    @include span-columns(12);
+    margin: 20px 0;
+
+    @include media($small-tablet) {
+        margin: 40px 0;
+    }
+}
+
+.media-caption {
+    width: 100%;
+    margin: 20px 0 0 0;
+    float: left;
+
+    text-align: center;
+    line-height: 1.3;
+    font-size: ($main-font-size - 2px);
+    font-style: italic;
+
+    color: $accent-color;
+
+    @include media($big-tablet) {
+        /* margin: 20px 0 0 0; */
+        font-size: $main-font-size;
+    }
+
+    a {
+      color: $accent-color;
+
+      &:hover {
+          color: $link-color;
+      }
+    }
+}
+
 #container {
   // to prevent scrollbars from showing during scale down page transitions
   overflow: hidden;
@@ -176,6 +230,11 @@ a {
   @include backface-visibility(hidden);
   -webkit-transform: translateZ(0);
   -webkit-perspective: 1000;
+}
+
+#profile-pic {
+  border-radius: 50%;
+  max-width: 250px;
 }
 
 #footer {
@@ -199,8 +258,8 @@ a {
     height: 30px;
     margin: 0 4px;
 
-    background-image: url("../images/social-icons-min.png");
-    background-size: 304px;
+    background-image: url("../images/social-icons-min-v2.png");
+    background-size: 347px;
     background-repeat: no-repeat;
 
     opacity: 0.3;
@@ -238,6 +297,10 @@ a {
 
     &#vimeo {
       background-position: -67px;
+    }
+
+    &#github {
+      background-position: -306px;
     }
 
     a {

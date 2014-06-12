@@ -57,7 +57,7 @@
     width: $logo-width;
     vertical-align: middle;
 
-    background-image: url("../images/db-logo-black-70.png");
+    background-image: url("../images/logo/db-logo-black-70.png");
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -68,7 +68,7 @@
   .logo-hover {
     @extend .logo;
     opacity: 0;
-    background-image: url("../images/db-logo-red-70.png");
+    background-image: url("../images/logo/db-logo-red-70.png");
   }
 
   &:hover {

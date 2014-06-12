@@ -46,7 +46,7 @@
     height: 100%;
     width: 35px;
     vertical-align: middle;
-    background-image: url("../images/db-logo-black-70.png");
+    background-image: url("../images/logo/db-logo-black-70.png");
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -55,7 +55,7 @@
     transition: opacity 0.5s; }
   #logo-container .logo-hover {
     opacity: 0;
-    background-image: url("../images/db-logo-red-70.png"); }
+    background-image: url("../images/logo/db-logo-red-70.png"); }
   #logo-container:hover .logo-hover {
     opacity: 1; }
 
