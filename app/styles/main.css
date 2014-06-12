@@ -5,11 +5,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
 .animated.scaleUpIn {
   -webkit-animation-name: scaleUpIn;
   -moz-animation-name: scaleUpIn;
@@ -163,164 +158,6 @@
   width: 175px;
   margin: 0 auto; }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.animated.scaleUpIn {
-  -webkit-animation-name: scaleUpIn;
-  -moz-animation-name: scaleUpIn;
-  animation-name: scaleUpIn; }
-
-@-webkit-keyframes scaleUpIn {
-  from {
-    -webkit-transform: scale(0.95);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    opacity: 1; } }
-@-moz-keyframes scaleUpIn {
-  from {
-    -moz-transform: scale(0.95);
-    opacity: 0; }
-
-  to {
-    -moz-transform: scale(1);
-    opacity: 1; } }
-@keyframes scaleUpIn {
-  from {
-    -webkit-transform: scale(0.95);
-    -moz-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    -o-transform: scale(0.95);
-    transform: scale(0.95);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; } }
-.animated.scaleUpOut {
-  -webkit-animation-name: scaleUpOut;
-  -moz-animation-name: scaleUpOut;
-  animation-name: scaleUpOut; }
-
-@-webkit-keyframes scaleUpOut {
-  from {
-    -webkit-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(1.1);
-    opacity: 0; } }
-@-moz-keyframes scaleUpOut {
-  from {
-    -moz-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -moz-transform: scale(1.1);
-    opacity: 0; } }
-@keyframes scaleUpOut {
-  from {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    opacity: 0; } }
-.animated.scaleDownIn {
-  -webkit-animation-name: scaleDownIn;
-  -moz-animation-name: scaleDownIn;
-  animation-name: scaleDownIn; }
-
-@-webkit-keyframes scaleDownIn {
-  from {
-    -webkit-transform: scale(1.1);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    opacity: 1; } }
-@-moz-keyframes scaleDownIn {
-  from {
-    -moz-transform: scale(1.1);
-    opacity: 0; }
-
-  to {
-    -moz-transform: scale(1);
-    opacity: 1; } }
-@keyframes scaleDownIn {
-  from {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; } }
-.animated.scaleDownOut {
-  -webkit-animation-name: scaleDownOut;
-  -moz-animation-name: scaleDownOut;
-  animation-name: scaleDownOut; }
-
-@-webkit-keyframes scaleDownOut {
-  from {
-    -webkit-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(0.98);
-    opacity: 0; } }
-@-moz-keyframes scaleDownOut {
-  from {
-    -moz-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -moz-transform: scale(0.98);
-    opacity: 0; } }
-@keyframes scaleDownOut {
-  from {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(0.98);
-    -moz-transform: scale(0.98);
-    -ms-transform: scale(0.98);
-    -o-transform: scale(0.98);
-    transform: scale(0.98);
-    opacity: 0; } }
 #work-container {
   max-width: 68em;
   margin-left: auto;
@@ -405,164 +242,6 @@
   #work-container #city-impact-link {
     background-image: url("../images/portfolio-item-thumbs/city-impact.jpg"); }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-.animated.scaleUpIn {
-  -webkit-animation-name: scaleUpIn;
-  -moz-animation-name: scaleUpIn;
-  animation-name: scaleUpIn; }
-
-@-webkit-keyframes scaleUpIn {
-  from {
-    -webkit-transform: scale(0.95);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    opacity: 1; } }
-@-moz-keyframes scaleUpIn {
-  from {
-    -moz-transform: scale(0.95);
-    opacity: 0; }
-
-  to {
-    -moz-transform: scale(1);
-    opacity: 1; } }
-@keyframes scaleUpIn {
-  from {
-    -webkit-transform: scale(0.95);
-    -moz-transform: scale(0.95);
-    -ms-transform: scale(0.95);
-    -o-transform: scale(0.95);
-    transform: scale(0.95);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; } }
-.animated.scaleUpOut {
-  -webkit-animation-name: scaleUpOut;
-  -moz-animation-name: scaleUpOut;
-  animation-name: scaleUpOut; }
-
-@-webkit-keyframes scaleUpOut {
-  from {
-    -webkit-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(1.1);
-    opacity: 0; } }
-@-moz-keyframes scaleUpOut {
-  from {
-    -moz-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -moz-transform: scale(1.1);
-    opacity: 0; } }
-@keyframes scaleUpOut {
-  from {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    opacity: 0; } }
-.animated.scaleDownIn {
-  -webkit-animation-name: scaleDownIn;
-  -moz-animation-name: scaleDownIn;
-  animation-name: scaleDownIn; }
-
-@-webkit-keyframes scaleDownIn {
-  from {
-    -webkit-transform: scale(1.1);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    opacity: 1; } }
-@-moz-keyframes scaleDownIn {
-  from {
-    -moz-transform: scale(1.1);
-    opacity: 0; }
-
-  to {
-    -moz-transform: scale(1);
-    opacity: 1; } }
-@keyframes scaleDownIn {
-  from {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    transform: scale(1.1);
-    opacity: 0; }
-
-  to {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; } }
-.animated.scaleDownOut {
-  -webkit-animation-name: scaleDownOut;
-  -moz-animation-name: scaleDownOut;
-  animation-name: scaleDownOut; }
-
-@-webkit-keyframes scaleDownOut {
-  from {
-    -webkit-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(0.98);
-    opacity: 0; } }
-@-moz-keyframes scaleDownOut {
-  from {
-    -moz-transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -moz-transform: scale(0.98);
-    opacity: 0; } }
-@keyframes scaleDownOut {
-  from {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; }
-
-  to {
-    -webkit-transform: scale(0.98);
-    -moz-transform: scale(0.98);
-    -ms-transform: scale(0.98);
-    -o-transform: scale(0.98);
-    transform: scale(0.98);
-    opacity: 0; } }
 .project-container .project-content-header {
   text-align: center;
   font-size: 20px; }
@@ -627,12 +306,6 @@
           margin-right: 0; }
         .project-container .project-info .project-info-item:nth-child(4n+1) {
           clear: left; } }
-  .project-container .project-info .small-title {
-    font-family: Lato, Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    /* text-transform: uppercase; */
-    font-weight: bold;
-    /* color: \$accent-color; */ }
 
 .hover-before-after {
   float: left;
@@ -796,11 +469,6 @@
       height: 70px;
       line-height: 70px; } }
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
 #navbar-container {
   position: fixed;
   top: 0;
@@ -889,6 +557,85 @@
     #nav-links .nav-link:last-child {
       padding: 0 0 0 5px; }
 
+.resume-section-header {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-top: 40px;
+  color: #a91818; }
+  .resume-section-header:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 850px) {
+    .resume-section-header {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 23.23176%; }
+      .resume-section-header:last-child {
+        margin-right: 0; } }
+
+.resume-content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  margin-top: 20px; }
+  .resume-content:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 850px) {
+    .resume-content {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 74.41059%;
+      margin-right: 0;
+      margin-top: 40px; }
+      .resume-content:last-child {
+        margin-right: 0; } }
+  .resume-content p {
+    margin: 0; }
+  .resume-content .big-title-section, .resume-content .small-title-section {
+    margin-top: 40px;
+    line-height: 1.6em;
+    font-size: 17px; }
+    .resume-content .big-title-section:first-child, .resume-content .small-title-section:first-child {
+      margin-top: 0; }
+  .resume-content .small-title-section {
+    margin-top: 20px; }
+  .resume-content .resume-subtitle {
+    font-weight: normal;
+    color: #80899b;
+    margin-top: 20px; }
+  .resume-content .roles-list {
+    padding: 0 0 0 20px;
+    margin: 0; }
+
+.tech-skills {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%; }
+  .tech-skills:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 850px) {
+    .tech-skills {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      .tech-skills:last-child {
+        margin-right: 0; }
+      .tech-skills:last-child {
+        margin-left: 8.5298%;
+        margin-right: 0; } }
+  .tech-skills .skills-list {
+    display: inline-block;
+    padding: 0;
+    list-style: none;
+    margin: 0 15px 0 0;
+    vertical-align: top; }
+
 /* @include font-face(Calendas Plus, '../calendas-plus-webfont/calendas-plus-webfont'); */
 body,
 p,
@@ -959,6 +706,16 @@ p, ol, ul {
   margin-bottom: 0;
   font-family: Lato;
   font-size: 18px; }
+
+.small-title, .resume-section-header {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  /* color: \$accent-color; */ }
+
+.normal-weight {
+  font-weight: normal; }
 
 a {
   -webkit-transition: color 0.2s;

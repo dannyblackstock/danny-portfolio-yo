@@ -1,0 +1,74 @@
+$resume-top-margin: 40px;
+
+.resume-section-header {
+  @include span-columns(12);
+  @extend .small-title;
+  margin-top: $resume-top-margin;
+  color: darken($link-color, 10%);
+
+  @include media($big-tablet) {
+    @include span-columns(3);
+  }
+}
+
+.resume-content {
+  @include span-columns(12);
+  margin-top: ($resume-top-margin / 2);
+
+  @include media($big-tablet) {
+    @include span-columns(9);
+    @include omega();
+    margin-top: $resume-top-margin;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .big-title-section {
+    margin-top: $resume-top-margin;
+    line-height: 1.6em;
+    font-size: 17px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .small-title-section {
+    @extend .big-title-section;
+    margin-top: 20px;
+  }
+
+  .resume-subtitle {
+    font-weight: normal;
+    color: darken($accent-color, 15%);
+    margin-top: 20px;
+  }
+
+  .roles-list {
+    padding: 0 0 0 20px;
+    margin: 0;
+  }
+}
+
+.tech-skills {
+  @include span-columns(6);
+
+  @include media($big-tablet) {
+    @include span-columns(4);
+
+    &:last-child {
+      @include shift(1);
+      @include omega();
+    }
+  }
+
+  .skills-list {
+    display: inline-block;
+    padding: 0;
+    list-style: none;
+    margin: 0 15px 0 0;
+    vertical-align: top;
+  }
+}

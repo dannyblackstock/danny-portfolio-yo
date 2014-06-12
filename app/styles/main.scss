@@ -13,6 +13,7 @@
 @import "work.scss";
 @import "project.scss";
 @import "nav_bar.scss";
+@import "resume.scss";
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic);
@@ -93,6 +94,18 @@ p, ol, ul {
   margin-bottom: 0;
   font-family: Lato;
   font-size: 18px;
+}
+
+.small-title {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  /* color: \$accent-color; */
+}
+
+.normal-weight {
+  font-weight: normal;
 }
 
 a {

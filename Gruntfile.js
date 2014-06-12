@@ -56,6 +56,7 @@ module.exports = function (grunt) {
                 files: [
                     '<%= yeoman.app %>/{,*/}*.html',
                     '.tmp/styles/{,*/}*.css',
+                    '<%= yeoman.app %>/styles/{,*/}*.css',
                     '<%= yeoman.app %>/images/{,*/}*.{gif,jpeg,jpg,png,svg,webp}'
                 ]
             }
@@ -99,6 +100,7 @@ module.exports = function (grunt) {
                         var validHTMLExtensions = {
                             '.html' : 'text/html',
                         };
+
                         var isHTML = validHTMLExtensions[ext];
 
                         var validNonHMTLExtensions = {
@@ -116,11 +118,12 @@ module.exports = function (grunt) {
                             '.eot': 'application/vnd.ms-fontobject',
                             '.pdf': 'application/pdf'
                         };
+                        
                         var isNotDirectoryOrHTML = validNonHMTLExtensions[ext];
 
                         if (isNotDirectoryOrHTML) {
 
-                            if( filename.indexOf('/app') >= 0){
+                            if(filename.indexOf('/app') >= 0){
                                 localPath += filename;
                             }
                             else {
@@ -240,13 +243,16 @@ module.exports = function (grunt) {
         // Compiles Sass to CSS and generates necessary files if requested
         sass: {
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/styles',
-                    src: ['*.scss'],
-                    dest: '<%= yeoman.app %>/styles',
-                    ext: '.css'
-                }]
+                files: {
+                  '<%= yeoman.app %>/styles/main.css' : '<%= yeoman.app %>/styles/main.scss'
+                }
+                // [{
+                //     expand: true,
+                //     cwd: '<%= yeoman.app %>/styles',
+                //     src: ['*.scss'],
+                //     dest: '<%= yeoman.app %>/styles',
+                //     ext: '.css'
+                // }]
             },
             server: {
                 options: {

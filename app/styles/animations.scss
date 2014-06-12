@@ -1,6 +1,3 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
-
 // for use by animo.js
 .animated.scaleUpIn {
   @include animation-name(scaleUpIn);
