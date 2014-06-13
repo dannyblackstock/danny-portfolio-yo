@@ -16,7 +16,7 @@
 
     background-size: cover;
     background-position: center;
-    background-color: #77f;
+    background-color: #eee;
     cursor: pointer;
 
     opacity: 0.85;
@@ -39,21 +39,16 @@
 
     @include media($mobile) {
       height: 275px;
-      background-color: green;
     }
 
     @include media($small-tablet) {
       height: 250px;
       width: 50%;
-
-      background-color: red;
     }
 
     @include media($laptop) {
       height: 275px;
       width: 33.333%;
-
-      background-color: pink;
     }
 
     .hover-description {

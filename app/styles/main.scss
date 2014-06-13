@@ -14,11 +14,10 @@
 @import "project.scss";
 @import "nav_bar.scss";
 @import "resume.scss";
+@import "contact.scss";
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic);
-
-/* @include font-face(Calendas Plus, '../calendas-plus-webfont/calendas-plus-webfont'); */
 
 // Remove default margins.
 body,
@@ -32,15 +31,63 @@ h6 {
   margin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p, ol, ul {
+  font-size: $main-font-size;
+  line-height: $main-line-height;
+
+  /* @include media (\$big-screen) {
+    font-size: \$main-font-size + 2px;
+  } */
+}
+
+body {
+  background-color: $bg-color;
+  font-family: $body-font;
+}
+
+form {
+  font-size: $main-font-size;
+  line-height: $main-line-height;
+}
+
 img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
 }
 
-body {
-  background-color: $bg-color;
-  font-family: 'Merriweather', Georgia, serif;
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  font-family: $body-font;
+  font-size: $main-font-size;
+  box-shadow: none;
+  border: 1px solid $input-border-color;
+  @include transition(all 0.2s);
+
+  @include placeholder {
+    font-style: italic;
+  }
+}
+
+input:focus, textarea:focus, a:focus, button:focus {
+  outline: none;
+  box-shadow:
+  0 0 0 1px $link-color,
+  0 0 6px $link-color;
 }
 
 ::-webkit-scrollbar {
@@ -53,28 +100,6 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #ccc;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Lato, Helvetica, Arial, sans-serif;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-p, ol, ul {
-  font-size: $main-font-size;
-  line-height: 1.7;
-
-  /* @include media (\$big-screen) {
-    font-size: \$main-font-size + 2px;
-  } */
 }
 
 // usually paragraphs
@@ -92,12 +117,12 @@ p, ol, ul {
   @extend .body-content;
   font-weight: bold;
   margin-bottom: 0;
-  font-family: Lato;
+  font-family: $heading-font;
   font-size: 18px;
 }
 
 .small-title {
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: $heading-font;
   font-size: 18px;
   /* text-transform: uppercase; */
   font-weight: bold;
@@ -264,61 +289,56 @@ a {
   list-style-type: none;
   padding: 0;
   margin: 45px 0 30px 0;
+}
 
-  .footer-link {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    margin: 0 4px;
+.footer-link {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 4px;
 
-    background-image: url("../images/social-icons-min-v2.png");
-    background-size: 347px;
-    background-repeat: no-repeat;
+  background-image: url("../images/social-icons-min-v2.png");
+  background-size: 347px;
+  background-repeat: no-repeat;
 
-    opacity: 0.3;
+  opacity: 0.3;
 
-    @include transition(opacity 0.25s);
+  @include transition(opacity 0.25s);
 
-    &:hover {
-      opacity: 1;
-    }
+  &:hover, &:focus {
+    opacity: 1;
+  }
 
-    &#email {
-      background-position: -263px;
-    }
+  &#email {
+    background-position: -263px;
+  }
 
-    &#youtube {
-      background-position: -9px;
-      margin: 0 4px 0 0px;
-    }
+  &#youtube {
+    background-position: -9px;
+    margin: 0 4px 0 0px;
+  }
 
-    &#photo500px {
-      background-position: -136px;
-    }
+  &#photo500px {
+    background-position: -136px;
+  }
 
-    &#dribbble {
-      background-position: -179px;
-    }
+  &#dribbble {
+    background-position: -179px;
+  }
 
-    &#twitter {
-      background-position: -222px;
-    }
+  &#twitter {
+    background-position: -222px;
+  }
 
-    &#linkedin {
-      background-position: -93px;
-    }
+  &#linkedin {
+    background-position: -93px;
+  }
 
-    &#vimeo {
-      background-position: -67px;
-    }
+  &#vimeo {
+    background-position: -67px;
+  }
 
-    &#github {
-      background-position: -306px;
-    }
-
-    a {
-      display: block;
-      height: 100%;
-    }
+  &#github {
+    background-position: -306px;
   }
 }
