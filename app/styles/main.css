@@ -153,11 +153,6 @@
     -o-transform: scale(0.98);
     transform: scale(0.98);
     opacity: 0; } }
-#error-404-container {
-  text-align: center;
-  width: 175px;
-  margin: 0 auto; }
-
 #work-container {
   max-width: 68em;
   margin-left: auto;
