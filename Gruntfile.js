@@ -118,7 +118,7 @@ module.exports = function (grunt) {
                             '.eot': 'application/vnd.ms-fontobject',
                             '.pdf': 'application/pdf'
                         };
-                        
+
                         var isNotDirectoryOrHTML = validNonHMTLExtensions[ext];
 
                         if (isNotDirectoryOrHTML) {
@@ -244,7 +244,7 @@ module.exports = function (grunt) {
         sass: {
             dist: {
                 files: {
-                  '<%= yeoman.app %>/styles/main.css' : '<%= yeoman.app %>/styles/main.scss'
+                    '<%= yeoman.app %>/styles/main.css' : '<%= yeoman.app %>/styles/main.scss'
                 }
                 // [{
                 //     expand: true,
