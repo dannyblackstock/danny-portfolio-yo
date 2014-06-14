@@ -154,7 +154,7 @@
 
   background-size: 20px;
   background-repeat: no-repeat;
-  background-position-y: center;
+  background-position: 0 center;
 
   opacity: 0.5;
   @include transition(all 0.25s);

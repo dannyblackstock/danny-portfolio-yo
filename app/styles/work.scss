@@ -20,9 +20,7 @@
     opacity: 0.85;
     -webkit-backface-visibility: none;
 
-    @include transition-property(transform, opacity);
-    @include transition-duration(0.2s);
-    @include transition-timing-function(ease);
+    @include transition(all 0.2s ease);
 
     .touch &, &:hover {
       opacity: 1;

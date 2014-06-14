@@ -55,6 +55,7 @@ p, ol, ul {
 body {
   background-color: $bg-color;
   font-family: $body-font;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 form {
@@ -66,6 +67,7 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+  float: left;
 }
 
 input, textarea {
@@ -272,6 +274,7 @@ a {
 #profile-pic {
   border-radius: 50%;
   max-width: 250px;
+  float: none;
 }
 
 #footer {
