@@ -735,8 +735,7 @@ form {
 img {
   max-width: 100%;
   display: block;
-  margin: 0 auto;
-  float: left; }
+  margin: 0 auto; }
 
 input, textarea {
   width: 100%;
@@ -914,6 +913,14 @@ a {
     .image-container {
       margin: 40px 0; } }
 
+.full-width {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%; }
+  .full-width:last-child {
+    margin-right: 0; }
+
 .media-caption {
   width: 100%;
   margin: 20px 0 0 0;
@@ -944,8 +951,7 @@ a {
 
 #profile-pic {
   border-radius: 50%;
-  max-width: 250px;
-  float: none; }
+  max-width: 250px; }
 
 #footer {
   -webkit-animation-name: fadeIn;

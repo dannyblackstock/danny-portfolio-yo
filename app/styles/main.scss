@@ -67,7 +67,6 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
-  float: left;
 }
 
 input, textarea {
@@ -233,6 +232,10 @@ a {
     }
 }
 
+.full-width {
+  @include span-columns(12);
+}
+
 .media-caption {
     width: 100%;
     margin: 20px 0 0 0;
@@ -274,7 +277,6 @@ a {
 #profile-pic {
   border-radius: 50%;
   max-width: 250px;
-  float: none;
 }
 
 #footer {
