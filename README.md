@@ -7,4 +7,4 @@ My <a href="http://yeoman.io/">Yeoman</a> portfolio. Built using a bunch of tool
 
 Uses some custom middleware for <a href="https://github.com/gruntjs/grunt-contrib-connect">grunt-contrib-connect</a> in order to allow routing to be controlled by Javascript (see Gruntfile.js).
 
-Make sure you use the custom-animate-animo.js instead of the one that comes with animo, since I added slideOutLeft and slideOutRight transitions. So, use it to overwrite the file app/bower_components/animo.js/animate+animo.css.
+Make sure you use the custom-animate-animo.css instead of the one that comes with animo, since I added slideOutLeft and slideOutRight transitions. So, use it to overwrite the file app/bower_components/animo.js/animate+animo.css.
