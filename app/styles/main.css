@@ -165,9 +165,9 @@
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     transition: all 0.2s ease; }
-    .touch #work-container .portfolio-item, #work-container .portfolio-item:hover {
+    .touch #work-container .portfolio-item, #work-container .portfolio-item:hover, #work-container .portfolio-item:focus {
       opacity: 1; }
-      .touch #work-container .portfolio-item .hover-description, #work-container .portfolio-item:hover .hover-description {
+      .touch #work-container .portfolio-item .hover-description, #work-container .portfolio-item:hover .hover-description, #work-container .portfolio-item:focus .hover-description {
         opacity: 1; }
     #work-container .portfolio-item:active {
       -webkit-transform: scale(0.97);
@@ -362,31 +362,31 @@
   @media screen and (min-width: 485px) {
     .arrow {
       height: 70px; } }
-  .no-touch .arrow:hover {
+  .no-touch .arrow:hover, .arrow:focus {
     opacity: 1; }
-    .no-touch .arrow:hover .arrow-hover-image {
+    .no-touch .arrow:hover .arrow-hover-image, .arrow:focus .arrow-hover-image {
       opacity: 1; }
-    .no-touch .arrow:hover #left-arrow-image {
+    .no-touch .arrow:hover #left-arrow-image, .arrow:focus #left-arrow-image {
       -webkit-transform: translate(40px, 0);
       -moz-transform: translate(40px, 0);
       -ms-transform: translate(40px, 0);
       -o-transform: translate(40px, 0);
       transform: translate(40px, 0); }
       @media screen and (min-width: 485px) {
-        .no-touch .arrow:hover #left-arrow-image {
+        .no-touch .arrow:hover #left-arrow-image, .arrow:focus #left-arrow-image {
           -webkit-transform: translate(40px, 10px);
           -moz-transform: translate(40px, 10px);
           -ms-transform: translate(40px, 10px);
           -o-transform: translate(40px, 10px);
           transform: translate(40px, 10px); } }
-    .no-touch .arrow:hover #right-arrow-image {
+    .no-touch .arrow:hover #right-arrow-image, .arrow:focus #right-arrow-image {
       -webkit-transform: translate(-40px, 0);
       -moz-transform: translate(-40px, 0);
       -ms-transform: translate(-40px, 0);
       -o-transform: translate(-40px, 0);
       transform: translate(-40px, 0); }
       @media screen and (min-width: 485px) {
-        .no-touch .arrow:hover #right-arrow-image {
+        .no-touch .arrow:hover #right-arrow-image, .arrow:focus #right-arrow-image {
           -webkit-transform: translate(-40px, 10px);
           -moz-transform: translate(-40px, 10px);
           -ms-transform: translate(-40px, 10px);
@@ -498,7 +498,7 @@
   #logo-container .logo-hover {
     opacity: 0;
     background-image: url("../images/logo/db-logo-red-70.png"); }
-  #logo-container:hover .logo-hover {
+  #logo-container:hover .logo-hover, #logo-container:focus .logo-hover {
     opacity: 1; }
 
 #logo-text {
@@ -634,7 +634,7 @@
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s; }
-    #contact-form #send-button:hover {
+    #contact-form #send-button:hover, #contact-form #send-button:focus {
       border: 2px solid #D61E1E;
       color: #D61E1E; }
     #contact-form #send-button:active {

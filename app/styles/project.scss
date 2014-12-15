@@ -184,7 +184,7 @@
   //     }
   // }
 
-  .no-touch &:hover {
+  .no-touch &:hover, &:focus {
     opacity: 1;
 
     .arrow-hover-image {
