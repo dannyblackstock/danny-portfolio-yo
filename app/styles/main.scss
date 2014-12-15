@@ -83,11 +83,16 @@ input, textarea {
   }
 }
 
-input:focus, textarea:focus, a:focus, button:focus {
+input:focus, textarea:focus {
   outline: none;
   box-shadow:
   0 0 0 1px $link-color,
   0 0 6px $link-color;
+}
+
+a:focus, button:focus {
+  outline: none;
+  color: $link-color;
 }
 
 ::-webkit-scrollbar {
@@ -189,6 +194,24 @@ a {
 
   &:hover img{
     opacity: 1;
+  }
+}
+
+.third {
+  @include span-columns(12);
+  text-align: center;
+  margin-top: 20px;
+  // margin-bottom: 10px;
+  // text-decoration: none;
+
+  @include media($small-tablet) {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include span-columns(4);
+    &.right-third {
+      @include omega();
+    }
   }
 }
 

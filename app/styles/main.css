@@ -205,6 +205,8 @@
         font-weight: 300; }
       .no-cssgradients #work-container .portfolio-item .hover-description {
         background-color: rgba(0, 0, 0, 0.4); }
+  #work-container #dog-collar-link {
+    background-image: url("../images/portfolio-item-thumbs/collar-wristband-thumbnail.jpg"); }
   #work-container #siat-outreach-link {
     background-image: url("../images/portfolio-item-thumbs/siat-outreach-thumbnail.jpg"); }
   #work-container #active-textbook-link {
@@ -236,7 +238,7 @@
   display: block;
   margin-right: 2.35765%;
   width: 100%;
-  margin: 0 0 10px 0; }
+  margin: 0 0 20px 0; }
   .project-container .project-info:last-child {
     margin-right: 0; }
   .project-container .project-info .project-info-item {
@@ -744,9 +746,13 @@ input, textarea {
   input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-style: italic; }
 
-input:focus, textarea:focus, a:focus, button:focus {
+input:focus, textarea:focus {
   outline: none;
   box-shadow: 0 0 0 1px #D61E1E, 0 0 6px #D61E1E; }
+
+a:focus, button:focus {
+  outline: none;
+  color: #D61E1E; }
 
 ::-webkit-scrollbar {
   width: 12px; }
@@ -849,6 +855,28 @@ a {
         margin-bottom: 20px; } }
   .half:hover img {
     opacity: 1; }
+
+.third {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; }
+  .third:last-child {
+    margin-right: 0; }
+  @media screen and (min-width: 650px) {
+    .third {
+      margin-top: 0;
+      margin-bottom: 0;
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%; }
+      .third:last-child {
+        margin-right: 0; }
+      .third.right-third {
+        margin-right: 0; } }
 
 .contents-container {
   max-width: 68em;
