@@ -1,9 +1,15 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic);
-* {
+html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
 
 .animated.scaleUpIn {
   -webkit-animation-name: scaleUpIn;
@@ -13,16 +19,47 @@
 @-webkit-keyframes scaleUpIn {
   from {
     -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
     opacity: 0; }
   to {
     -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; } }
 @-moz-keyframes scaleUpIn {
   from {
+    -webkit-transform: scale(0.95);
     -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
     opacity: 0; }
   to {
+    -webkit-transform: scale(1);
     -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; } }
+@-o-keyframes scaleUpIn {
+  from {
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0; }
+  to {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; } }
 @keyframes scaleUpIn {
   from {
@@ -47,16 +84,47 @@
 @-webkit-keyframes scaleUpOut {
   from {
     -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; }
   to {
     -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
     opacity: 0; } }
 @-moz-keyframes scaleUpOut {
   from {
+    -webkit-transform: scale(1);
     -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; }
   to {
+    -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0; } }
+@-o-keyframes scaleUpOut {
+  from {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
     opacity: 0; } }
 @keyframes scaleUpOut {
   from {
@@ -81,16 +149,47 @@
 @-webkit-keyframes scaleDownIn {
   from {
     -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
     opacity: 0; }
   to {
     -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; } }
 @-moz-keyframes scaleDownIn {
   from {
+    -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
     opacity: 0; }
   to {
+    -webkit-transform: scale(1);
     -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; } }
+@-o-keyframes scaleDownIn {
+  from {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    opacity: 0; }
+  to {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; } }
 @keyframes scaleDownIn {
   from {
@@ -115,16 +214,47 @@
 @-webkit-keyframes scaleDownOut {
   from {
     -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; }
   to {
     -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+    transform: scale(0.98);
     opacity: 0; } }
 @-moz-keyframes scaleDownOut {
   from {
+    -webkit-transform: scale(1);
     -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
     opacity: 1; }
   to {
+    -webkit-transform: scale(0.98);
     -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+    transform: scale(0.98);
+    opacity: 0; } }
+@-o-keyframes scaleDownOut {
+  from {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+    transform: scale(0.98);
     opacity: 0; } }
 @keyframes scaleDownOut {
   from {
@@ -142,13 +272,15 @@
     transform: scale(0.98);
     opacity: 0; } }
 #work-container {
+  *zoom: 1;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   text-align: center; }
+  #work-container:before, #work-container:after {
+    content: " ";
+    display: table; }
   #work-container:after {
-    content: "";
-    display: table;
     clear: both; }
   #work-container .portfolio-item {
     display: inline-block;
@@ -189,11 +321,12 @@
     #work-container .portfolio-item .hover-description {
       height: 100%;
       padding: 10px 0;
-      font-family: Lato;
+      font-family: "Open Sans", Helvetica, Arial, sans-serif;
       color: white;
       font-size: 20px;
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
       background-color: transparent;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(55%, transparent));
       background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), transparent 55%);
       background-image: linear-gradient(rgba(0, 0, 0, 0.4), transparent 55%);
       opacity: 0;
@@ -331,15 +464,17 @@
     background-image: url("../images/awake/split.jpg"); }
 
 #project-controls {
+  *zoom: 1;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   height: 70px;
   margin-top: 20px;
   margin-bottom: 20px; }
+  #project-controls:before, #project-controls:after {
+    content: " ";
+    display: table; }
   #project-controls:after {
-    content: "";
-    display: table;
     clear: both; }
 
 .arrow {
@@ -450,9 +585,10 @@
   top: 0;
   z-index: 1;
   width: 100%;
-  font-family: Lato, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
   font-weight: 300;
   background-color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, rgba(255, 255, 255, 0.85)));
   background-image: -webkit-linear-gradient(white, rgba(255, 255, 255, 0.85));
   background-image: linear-gradient(white, rgba(255, 255, 255, 0.85)); }
   #navbar-container a {
@@ -461,13 +597,15 @@
     background-color: rgba(255, 255, 255, 0.9); }
 
 #navbar-contents {
+  *zoom: 1;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px; }
+  #navbar-contents:before, #navbar-contents:after {
+    content: " ";
+    display: table; }
   #navbar-contents:after {
-    content: "";
-    display: table;
     clear: both; }
   @media screen and (min-width: 650px) {
     #navbar-contents {
@@ -628,7 +766,7 @@
     margin-top: 20px;
     background-color: white;
     border: 2px solid black;
-    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 18px;
     cursor: pointer;
     -webkit-transition: all 0.2s;
@@ -701,7 +839,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", Helvetica, Arial, sans-serif; }
+  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
 
 h1 {
   font-size: 36px; }
@@ -739,9 +877,9 @@ input, textarea {
   transition: all 0.2s; }
   input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
     font-style: italic; }
-  input::-moz-placeholder, textarea::-moz-placeholder {
-    font-style: italic; }
   input:-moz-placeholder, textarea:-moz-placeholder {
+    font-style: italic; }
+  input::-moz-placeholder, textarea::-moz-placeholder {
     font-style: italic; }
   input:-ms-input-placeholder, textarea:-ms-input-placeholder {
     font-style: italic; }
@@ -784,11 +922,11 @@ a:focus, button:focus {
 .paragraph-heading {
   font-weight: bold;
   margin-bottom: 0;
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 18px; }
 
 .small-title, .resume-section-header {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 18px;
   /* text-transform: uppercase; */
   font-weight: bold;
@@ -879,13 +1017,15 @@ a {
         margin-right: 0; } }
 
 .contents-container {
+  *zoom: 1;
   max-width: 68em;
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px; }
+  .contents-container:before, .contents-container:after {
+    content: " ";
+    display: table; }
   .contents-container:after {
-    content: "";
-    display: table;
     clear: both; }
   @media screen and (min-width: 650px) {
     .contents-container {
