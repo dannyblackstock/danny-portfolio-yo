@@ -111,6 +111,7 @@ a:focus, button:focus {
 .body-content {
     @include span-columns(12);
     margin: 20px 0;
+    padding: 0 $side-padding;
 
     @include media($big-tablet) {
         @include span-columns(8);
@@ -217,11 +218,11 @@ a {
 
 .contents-container {
   @include outer-container;
-  padding: 0 10px;
+  padding: 0;
 
-  @include media($small-tablet) {
-    padding: 0 20px;
-  }
+  // @include media($small-tablet) {
+  //   padding: 0 20px;
+  // }
 }
 
 .videoWrapper {
@@ -297,9 +298,25 @@ a {
   -webkit-perspective: 1000;
 }
 
+#shrink-circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+
+  width:250px;
+  height: 250px;
+  background-color: #FFF;
+
+  border-radius: 50%;
+
+  @include animation(circleScaleDown 0.3s ease forwards);
+}
+
 #profile-pic {
   border-radius: 50%;
   max-width: 250px;
+  // @include animation(circleScaleDown 2.0s infinite);
 }
 
 #footer {

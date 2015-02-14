@@ -1,3 +1,12 @@
+@include keyframes(circleScaleDown) {
+  from {
+    @include transform(scale(1));
+  }
+  to {
+    @include transform(scale(0));
+  }
+}
+
 // for use by animo.js
 .animated.scaleUpIn {
   @include animation-name(scaleUpIn);

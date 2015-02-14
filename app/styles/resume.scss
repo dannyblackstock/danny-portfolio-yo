@@ -3,6 +3,8 @@ $resume-top-margin: 40px;
 .resume-section-header {
   @include span-columns(12);
   @extend .small-title;
+  padding: 0 $side-padding;
+  font-weight: normal;
   margin-top: $resume-top-margin;
   color: darken($link-color, 10%);
 
@@ -14,6 +16,7 @@ $resume-top-margin: 40px;
 .resume-content {
   @include span-columns(12);
   margin-top: ($resume-top-margin / 2);
+  padding: 0 $side-padding;
 
   @include media($big-tablet) {
     @include span-columns(9);
