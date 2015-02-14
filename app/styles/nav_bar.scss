@@ -4,7 +4,7 @@
   z-index: 1;
   width: 100%;
 
-  font-family: $heading-font, Helvetica, Arial, sans-serif;
+  font-family: $heading-font;
   font-weight: 300;
 
   @include linear-gradient(rgba(255,255,255, 1), rgba(255,255,255, 0.85), $fallback: transparent);

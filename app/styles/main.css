@@ -641,7 +641,7 @@ html {
   top: 0;
   z-index: 1;
   width: 100%;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 300;
   background-color: transparent;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, rgba(255, 255, 255, 0.85)));
@@ -732,8 +732,11 @@ html {
   display: block;
   margin-right: 2.35765%;
   width: 100%;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
   padding: 0 10px;
-  font-weight: normal;
   margin-top: 40px;
   color: #a91818; }
   .resume-section-header:last-child {
@@ -743,7 +746,8 @@ html {
       float: left;
       display: block;
       margin-right: 2.35765%;
-      width: 23.23176%; }
+      width: 23.23176%;
+      font-weight: normal; }
       .resume-section-header:last-child {
         margin-right: 0; } }
 
@@ -985,12 +989,10 @@ a:focus, button:focus {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 18px; }
 
-.small-title, .resume-section-header {
+.small-title {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  /* text-transform: uppercase; */
-  font-weight: bold;
-  /* color: \$accent-color; */ }
+  font-weight: bold; }
 
 .normal-weight {
   font-weight: normal; }

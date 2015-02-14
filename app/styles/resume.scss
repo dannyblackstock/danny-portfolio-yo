@@ -2,14 +2,19 @@ $resume-top-margin: 40px;
 
 .resume-section-header {
   @include span-columns(12);
-  @extend .small-title;
+  font-family: $heading-font;
+  font-size: 18px;
+  font-weight: bold;
+
+  font-size: 18px;
+
   padding: 0 $side-padding;
-  font-weight: normal;
   margin-top: $resume-top-margin;
   color: darken($link-color, 10%);
 
   @include media($big-tablet) {
     @include span-columns(3);
+    font-weight: normal;
   }
 }
 
