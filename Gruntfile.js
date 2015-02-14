@@ -243,8 +243,12 @@ module.exports = function (grunt) {
         // Compiles Sass to CSS and generates necessary files if requested
         sass: {
             dist: {
+                options: {
+                    style: 'compressed'
+                },
                 files: {
-                    '<%= yeoman.app %>/styles/main.css' : '<%= yeoman.app %>/styles/main.scss'
+                    '<%= yeoman.app %>/styles/main.css' : '<%= yeoman.app %>/styles/main.scss',
+                    '<%= yeoman.dist %>/styles/main.css' : '<%= yeoman.app %>/styles/main.scss'
                 }
                 // [{
                 //     expand: true,
@@ -290,10 +294,10 @@ module.exports = function (grunt) {
             dist: {
                 files: {
                     src: [
-                        '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                        '<%= yeoman.dist %>/styles/{,*/}*.css',
-                        '<%= yeoman.dist %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
-                        '<%= yeoman.dist %>/styles/fonts/{,*/}*.*'
+                        // '<%= yeoman.dist %>/scripts/{,*/}*.js',
+                        // '<%= yeoman.dist %>/styles/{,*/}*.css',
+                        // '<%= yeoman.dist %>/images/{,*/}*.{gif,jpeg,jpg,png,webp}',
+                        // '<%= yeoman.dist %>/styles/fonts/{,*/}*.*'
                     ]
                 }
             }
@@ -324,7 +328,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
+                    src: '**/*.{gif,jpeg,jpg,png}',
                     dest: '<%= yeoman.dist %>/images'
                 }]
             }
@@ -344,7 +348,7 @@ module.exports = function (grunt) {
                 options: {
                     collapseBooleanAttributes: true,
                     collapseWhitespace: true,
-                    removeAttributeQuotes: true,
+                    removeAttributeQuotes: false,
                     removeCommentsFromCDATA: true,
                     removeEmptyAttributes: true,
                     removeOptionalTags: true,
