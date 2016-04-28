@@ -22,7 +22,8 @@ module.exports = function (grunt) {
         yeoman: {
             // Configurable paths
             app: 'app',
-            dist: 'dist'
+            dist: 'dist',
+            build: 'build'
         },
 
         // Watches files for changes and runs tasks based on the changed files
@@ -130,7 +131,7 @@ module.exports = function (grunt) {
                                 localPath += '/app' + filename;
                             }
 
-                            path.exists(localPath, function(exists) {
+                            fs.exists(localPath, function(exists) {
                                 if(exists) {
                                     console.log('Serving file: ' + localPath);
                                     getFile(localPath, res, ext);
@@ -151,7 +152,7 @@ module.exports = function (grunt) {
                                 localPath += '/app' + filename;
                             }
 
-                            path.exists(localPath, function(exists) {
+                            fs.exists(localPath, function(exists) {
                                 if(exists) {
                                     console.log('HTML requested. Serving file: ' + localPath);
                                     getFile(localPath, res, ext);
@@ -420,8 +421,8 @@ module.exports = function (grunt) {
         // Generates a custom Modernizr build that includes only the tests you
         // reference in your app
         modernizr: {
-            devFile: '<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
-            outputFile: '<%= yeoman.dist %>/bower_components/modernizr/modernizr.js',
+            devFile: '<%= yeoman.app %>/bower_components/modernizr/modernizr-custom.min.js',
+            outputFile: '<%= yeoman.build %>/modernizr-custom.js',
             files: [
                 '<%= yeoman.dist %>/scripts/{,*/}*.js',
                 '<%= yeoman.dist %>/styles/{,*/}*.css',
